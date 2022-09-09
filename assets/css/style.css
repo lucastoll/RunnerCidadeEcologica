@@ -1,0 +1,64 @@
+/*Mexe na area do jogo*/
+.areajogo1{
+	border: 4px solid black;
+    width: 80%;
+    height: 500px;
+	position: relative;
+    margin-top: 30px;
+	overflow: hidden;
+	left: 100px;
+}
+/*Mexe no obstaculo terrestre carro*/
+.obstaculocarro{
+	position: absolute;
+	bottom: 0px;
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+	animation: carroparado linear infinite 2s;
+	
+}
+/*Mexe no jogador*/
+.player{
+	position: absolute;
+	bottom: 0px;
+	width: 50px;
+	height: 50px;
+	left: 40px;
+	background-color: red;
+	/*animation: pula linear infinite 1s;*/
+
+}
+.pula{
+	animation: pula linear infinite 1s;
+}
+/*Animação do primeiro obstaculo*/
+@keyframes carroparado {
+	0%{
+		right: -5%
+	}
+	50%{
+		right: 100%;
+	}
+	100%{
+		right: 100%;
+	}
+}
+@keyframes pula {
+	0%{
+		bottom: 0px;
+	}
+
+	45%{
+		bottom: 100px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	55%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
