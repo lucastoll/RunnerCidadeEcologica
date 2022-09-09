@@ -1,8 +1,15 @@
 const player = document.querySelector(".player");
 const obstaculo1 = document.querySelector(".obstaculocarro");
-const buttonStart = document.getElementById("buttonStart");
+const buttonStart = document.querySelectorAll(".buttonStart");
+const buttonMenu = document.querySelector(".buttonMenu");
+const menu = document.querySelector(".menu");
+const areajogo1 = document.querySelector(".areajogo1");
+const popUp = document.querySelector(".containerPopUpRestart");
+
+console.log(buttonStart)
 
 var auxPulo = 0;
+var auxStart;
 
 /* Define a ação para quando ele teclar a tecla W */
 
@@ -25,19 +32,29 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* Define a colisão e condição de parada */
-let intervalo
+let intervalo, intervaloPulo;
 
-buttonStart.addEventListener("click", () => {
-  obstaculo1.style.left = "auto";
-  obstaculo1.style.right = "-5%";
-  obstaculo1.style.animation = "carroparado linear infinite 2s";
-  console.log("a")
-
-  auxPulo = 0;
-  player.style.bottom = '0px';
-  player.classList.remove("pula");
-  intervalo = setInterval(colisao, 10);
+buttonMenu.addEventListener("click", () => {
+  menu.style.display = "none";
+  areajogo1.style.display = "block";
 })
+
+buttonStart.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    popUp.style.display = "none";
+    obstaculo1.style.left = "auto";
+    obstaculo1.style.right = "-5%";
+    obstaculo1.style.animation = "carroparado linear infinite 2s";
+  
+    auxPulo = 0;
+    auxStart = true;
+    player.classList.remove("pula");
+    player.style.bottom = '0px';
+    intervalo = setInterval(colisao, 1);
+    clearInterval(intervaloPulo);
+  })
+})
+
 
 
 function colisao(){
@@ -51,8 +68,14 @@ function colisao(){
     player.style.animation = "none";
     player.classList.remove("pula");
     player.style.bottom = `${posicaoplayer}px`;
-    auxPulo = 1;
+    popUp.style.display = "flex";
+    auxStart = false;
     
+    intervaloPulo = setInterval(manterAuxPuloFalse, 50);
     clearInterval(intervalo);
   }
+}
+
+function manterAuxPuloFalse(){
+  auxPulo = 1;
 }
