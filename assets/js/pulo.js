@@ -18,8 +18,8 @@ document.addEventListener("keydown", (event) => {
     }
 });
   
-export function setPlayerPodePular(value) {
+function setPlayerPodePular(value) {
     playerPodePular = value; 
 }
 
-export default setPlayerPodePular;
+export {setPlayerPodePular};
