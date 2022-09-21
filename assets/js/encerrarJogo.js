@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayer, obstaculoUm, posicaoObstaculoUm } from "./colisao.js";
-import { setJogoEmExecucao, intervaloChecarColisao } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisao, intervaloPontuacao } from "./comecarJogo.js";
 
 export function encerrarJogo(){
     obstaculoUm.style.animation = "none";
@@ -11,5 +11,6 @@ export function encerrarJogo(){
     setJogoEmExecucao(false);
     
     clearInterval(intervaloChecarColisao);
+    clearInterval(intervaloPontuacao);
 }
 

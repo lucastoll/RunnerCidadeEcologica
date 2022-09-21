@@ -21,6 +21,14 @@ body{
 	height: 50px;
 	background-color: blue;	
 }
+/*mexe na obstaculo aéreo placa*/
+.placa{
+	position: absolute;
+	bottom: 100px;
+	width: 50px;
+	height: 50px;
+	background-color: green;
+}
 /*Mexe no jogador*/
 .player{
 	position: absolute;
@@ -100,4 +108,9 @@ body{
     align-items: center;
 	top: 0;
 	left: 0;
+}
+.pontuacao{
+	text-align: right;
+	margin-left: 80%;
+	margin-right: 20px;
 }

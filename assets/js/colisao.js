@@ -2,6 +2,7 @@ import { encerrarJogo } from "./encerrarJogo.js";
 
 const player = document.querySelector(".player");
 const obstaculoUm = document.querySelector(".obstaculocarro");
+const obstaculoaereoum = document.querySelector(".placa");
 const popUp = document.querySelector(".containerPopUpRestart");
 
 /* Define a colisão e condição de parada */
@@ -18,4 +19,4 @@ function colisao(){
   }
 }
 
-export {player, posicaoPlayer, obstaculoUm, posicaoObstaculoUm, colisao, popUp};
+export {player, posicaoPlayer, obstaculoUm, obstaculoaereoum, posicaoObstaculoUm, colisao, popUp};

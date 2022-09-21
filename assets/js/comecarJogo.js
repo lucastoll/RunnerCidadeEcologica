@@ -1,5 +1,6 @@
 import setPlayerPodePular  from "./pulo.js";
-import {player, obstaculoUm, colisao, popUp} from "./colisao.js"
+import {player, obstaculoUm, obstaculoaereoum, colisao, popUp} from "./colisao.js"
+import {Marcaponto, ResetaPontos} from "./ponto.js";
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
 const buttonMenuInicial = document.querySelector(".buttonMenu");
@@ -9,6 +10,8 @@ const areaJogo = document.querySelector(".areajogo1");
 
 var jogoEmExecucao = false;
 let intervaloChecarColisao;
+let intervaloPontuacao;
+let qualobstaculo;
 
 /* Ações botão do menu e botão de restart */
 
@@ -23,21 +26,32 @@ buttonComecarJogo.forEach((button, index) => {
 })
 
 function comecarJogo(){
+  qualobstaculo=Math.random();
   popUp.style.display = "none";
+  //if(qualobstaculo==0){
   obstaculoUm.style.left = "auto";
   obstaculoUm.style.right = "-5%";
-  obstaculoUm.style.animation = "carroparado linear infinite 2s";
+  obstaculoUm.style.animation = "carroparado linear infinte 2s";
+  //}
+  /*else{
+  obstaculoaereoum.style.left = "auto";
+  obstaculoaereoum.style.right = "-5%";
+  obstaculoaereoum.style.animation = "carroparado linear 2s";
+  }*/
+  
 
   setPlayerPodePular(true);
   jogoEmExecucao = true;
   player.classList.remove("pula");
   player.style.bottom = '0px';
+  ResetaPontos();
   intervaloChecarColisao = setInterval(colisao, 10);
+  intervaloPontuacao= setInterval(Marcaponto, 2000);
 }
 
 function setJogoEmExecucao(value) {
     jogoEmExecucao = value; 
 }
 
-export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisao};
+export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisao, intervaloPontuacao};
 
