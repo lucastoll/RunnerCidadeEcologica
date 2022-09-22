@@ -15,7 +15,7 @@ function colisao(){
   posicaoObstaculoDois = arrayObstaculos[1].offsetLeft;
 
   posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
-  console.log(posicaoObstaculoDois, posicaoPlayer)
+  //console.log(posicaoObstaculoDois, posicaoPlayer)
 
 
   const playerEstaColidindo = 

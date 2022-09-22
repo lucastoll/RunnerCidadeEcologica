@@ -29,9 +29,9 @@ buttonComecarJogo.forEach((button, index) => {
 function comecarJogo(){
   jogoEmExecucao = true;
   obstaculoUm.style.left = "auto";
-  obstaculoUm.style.right = "-5%";
+  obstaculoUm.style.right = "-20%";
   obstaculoDois.style.left = "auto";
-  obstaculoDois.style.right = "-5%";
+  obstaculoDois.style.right = "-20%";
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style.bottom = '0px';
