@@ -28,10 +28,13 @@ function getRandomInt(min, max) {
 }
 //conta tempo
 function contatempo(){
-    tempo=tempo+0.5;
+    tempo=tempo++;
+}
+function getTempo(){
+    return tempo;
 }
 function zeratempo(){
     tempo=0;
 }
 
-export {randomizerObstaculos, zeratempo, contatempo};
+export {randomizerObstaculos, zeratempo, contatempo, getTempo};

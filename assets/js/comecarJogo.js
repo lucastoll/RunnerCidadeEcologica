@@ -2,7 +2,7 @@ import { setPlayerPodePular }  from "./pulo.js";
 import { player, colisao, popUp, obstaculoUm, obstaculoDois } from "./colisao.js"
 import { Marcaponto, ResetaPontos, timerObstaculos} from "./pontuacao.js";
 import { randomizerObstaculos } from "./randomizerObstaculos.js";
-import { zeratempo, contatempo } from "./randomizerObstaculos.js";
+import { zeratempo, contatempo, getTempo } from "./randomizerObstaculos.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -45,8 +45,15 @@ function comecarJogo(){
 
   intervaloChecarColisao = setInterval(colisao, 10);
   intervaloPontuacao = setInterval(Marcaponto, 2000);
-  intervaloRandomizer = setInterval(randomizerObstaculos, 2000);
   intervalotempo = setInterval(contatempo, 1000);
+  if(getTempo()>=10)
+  {
+  intervaloRandomizer = setInterval(randomizerObstaculos, 2000);
+  }
+  else{
+    intervaloRandomizer = setInterval(randomizerObstaculos, 1000);
+  }
+  
 }
 
 function setJogoEmExecucao(value) {
