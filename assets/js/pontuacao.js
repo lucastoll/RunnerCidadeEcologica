@@ -1,10 +1,10 @@
 const pontuacao = document.querySelector('.pontuacao');
 let ponto=0;
-let timerObstaculos = Math.floor((-0.1 * ponto + 2.10) * 1000);
+let timerObstaculos = 2000;
 
 function Marcaponto(){
-    if(timerObstaculos > 1000)
-        timerObstaculos = Math.floor((-0.1 * ponto + 2.10) * 1000);
+    if(timerObstaculos > 1500)
+        timerObstaculos = Math.floor(-10 * ponto + 2010);
     
     console.log("pontuação" + timerObstaculos);
     ponto++;
