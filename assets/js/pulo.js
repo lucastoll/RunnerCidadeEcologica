@@ -1,4 +1,4 @@
-import { player } from "./colisao.js";
+import { player } from "./colisorObstaculos.js";
 import { jogoEmExecucao } from "./comecarJogo.js";
 
 var playerPodePular = false;

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/areaJogo.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/popUp.css">
+    <link rel="stylesheet" href="./assets/css/obstaculos/obstaculos.css">
+    <link rel="stylesheet" href="./assets/css/powerUp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -20,6 +24,9 @@
         <div class="player"></div>
         <div class="obstaculocarro"></div>
         <div class="placa"></div>
+        <div class="powerUp--bicicleta"></div>
+        <div class="powerUp--onibus"></div>
+        <div class="powerUp--carroEletrico"></div>
         <div class="pontuacao">Score: 0</div>
     </div>
     <div class="containerPopUpRestart">
@@ -29,9 +36,12 @@
     </div>
 </body>
 </html>
-<script type="module" src="./assets/js/colisao.js"></script>
+<script type="module" src="./assets/js/colisorObstaculos.js"></script>
+<script type="module" src="./assets/js/powerUps/colisorPowerups.js"></script>
 <script type="module" src="./assets/js/comecarJogo.js"></script>
 <script type="module" src="./assets/js/encerrarJogo.js"></script>
 <script type="module" src="./assets/js/pulo.js"></script>
 <script type="module" src="./assets/js/pontuacao.js"></script>
 <script type="module" src="./assets/js/randomizerObstaculos.js"></script>
+<script type="module" src="./assets/js/powerUps/randomizerPowerups.js"></script>
+

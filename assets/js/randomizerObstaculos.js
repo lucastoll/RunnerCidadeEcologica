@@ -1,27 +1,25 @@
-import { arrayObstaculos } from "./colisao.js";
+import { arrayObstaculos } from "./colisorObstaculos.js";
 import { timerObstaculos } from "./pontuacao.js";
 import { jogoEmExecucao } from "./comecarJogo.js";
+import { getRandomInt } from "./auxiliares/getRandomInt.js";
 
-let randomizer = 0, i;
+let randomNumObstaculo = 0, i, auxiliar;
 
 function randomizerObstaculos(){
+
     if(jogoEmExecucao){
-        randomizer = getRandomInt(0, 2);
+        randomNumObstaculo = getRandomInt(0, 2);
+        auxiliar = randomNumObstaculo;
         for(i=0; i<arrayObstaculos.length; i++){
-            if(i != randomizer){
-                arrayObstaculos[i].style.animation = "none";
-            }
+            arrayObstaculos[i].style = "none";
         }
-        arrayObstaculos[randomizer].style.animation = `carroparado linear infinite ${(timerObstaculos + 100) / 1000}s`;
-    
+        /* DELAY PARA O CSS ENTENDER QUE A ANIMAÇÃO MUDOU */
+        setTimeout(() => {
+            arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(timerObstaculos) / 1000}s`;
+        }, 10);
+
         setTimeout(randomizerObstaculos, timerObstaculos);
     }
-}
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
 }
 
 export {randomizerObstaculos};

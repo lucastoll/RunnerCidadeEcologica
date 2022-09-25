@@ -1,0 +1,56 @@
+.powerUp--bicicleta, .powerUp--onibus, .powerUp--carroEletrico{
+    align-items: center;
+    border-radius: 100%;
+    bottom: 65px;
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    right: -10%;
+    width: 30px;
+    /* animation: powerUpKeyframe 5s infinite linear; */
+}
+
+.powerUp--bicicleta p, .powerUp--onibus p, .powerUp--carroEletrico p{
+    margin: 0;
+}
+
+.powerUp--bicicleta{
+    background: orange;
+}
+
+.powerUp--bicicleta::after{
+    content: 'bicicleta';
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+.powerUp--onibus{
+    background: #80CFFF;
+}
+
+.powerUp--onibus::after{
+    content: 'onibus';
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+.powerUp--carroEletrico{
+    background: #4C5660;
+}
+
+.powerUp--carroEletrico::after{
+    content: 'carroEletrico';
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+@keyframes powerUpKeyframe {
+	0%{
+		right: -10%;
+	}
+	100%{
+		right: 100%;
+	}
+}

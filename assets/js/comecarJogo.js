@@ -1,7 +1,9 @@
 import { setPlayerPodePular }  from "./pulo.js";
-import { player, colisao, popUp, obstaculoUm, obstaculoDois } from "./colisao.js"
+import { player, colisorObstaculos, popUp, obstaculoUm, obstaculoDois } from "./colisorObstaculos.js"
 import { Marcaponto, ResetaPontos} from "./pontuacao.js";
 import { randomizerObstaculos } from "./randomizerObstaculos.js";
+import { randomizerPowerups } from "./powerUps/randomizerPowerups.js";
+import { colisorPowerup } from "./powerUps/colisorPowerups.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -11,9 +13,7 @@ const menu = document.querySelector(".menu");
 const areaJogo = document.querySelector(".areajogo1");
 
 var jogoEmExecucao = false;
-let intervaloChecarColisao;
-let intervaloPontuacao;
-let intervaloRandomizer;
+let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao;
 
 /* Ações botão do menu e botão de restart */
 
@@ -29,6 +29,7 @@ buttonComecarJogo.forEach((button, index) => {
 
 function comecarJogo(){
   jogoEmExecucao = true;
+
   obstaculoUm.style.left = "auto";
   obstaculoUm.style.right = "-20%";
   obstaculoDois.style.left = "auto";
@@ -36,18 +37,21 @@ function comecarJogo(){
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style.bottom = '0px';
+  
   setPlayerPodePular(true);
   ResetaPontos();
-  //randomizerObstaculos();
 
-  intervaloChecarColisao = setInterval(colisao, 10);
+  intervaloChecarColisaoObstaculo = setInterval(colisorObstaculos, 10);
+  intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
-  setTimeout(randomizerObstaculos, 2000);
+
+  setTimeout(randomizerPowerups, 5000);
+  //setTimeout(randomizerObstaculos, 2000);
 }
 
 function setJogoEmExecucao(value) {
     jogoEmExecucao = value; 
 }
 
-export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisao, intervaloPontuacao, intervaloRandomizer};
+export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao};
 

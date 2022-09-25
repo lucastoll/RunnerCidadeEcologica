@@ -1,0 +1,23 @@
+body{
+	position: relative;
+	background: green;
+}
+
+/*Mexe na area do jogo*/
+.areajogo1{
+	display: none;
+    width: 100%;
+    height: 500px;
+	position: relative;
+	overflow: hidden;
+	background: white;
+}
+
+.pontuacao{
+	text-align: right;
+	margin-top: 16px;
+	margin-right: 32px;
+	font-size: 32px;
+	font-family: 'Press Start 2P', cursive;
+}
+

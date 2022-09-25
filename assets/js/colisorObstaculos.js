@@ -9,14 +9,10 @@ const popUp = document.querySelector(".containerPopUpRestart");
 /* Define a colisão e condição de parada */
 let posicaoPlayer, posicaoObstaculoUm, posicaoObstaculoDois;
 
-function colisao(){
-  //console.log(`Posição obstaculo = ${posicaoObstaculoUm}, posicao player = ${posicaoPlayer}`);
+function colisorObstaculos(){
   posicaoObstaculoUm = arrayObstaculos[0].offsetLeft;
   posicaoObstaculoDois = arrayObstaculos[1].offsetLeft;
-
   posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
-  //console.log(posicaoObstaculoDois, posicaoPlayer)
-
 
   const playerEstaColidindo = 
   (posicaoObstaculoUm < 92 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
@@ -27,4 +23,4 @@ function colisao(){
   }
 }
 
-export {player, posicaoPlayer, obstaculoUm, posicaoObstaculoUm, obstaculoDois, posicaoObstaculoDois, arrayObstaculos, colisao, popUp};
+export {player, posicaoPlayer, obstaculoUm, posicaoObstaculoUm, obstaculoDois, posicaoObstaculoDois, arrayObstaculos, colisorObstaculos, popUp};
