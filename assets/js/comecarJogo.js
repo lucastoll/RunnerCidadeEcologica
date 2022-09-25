@@ -37,11 +37,11 @@ function comecarJogo(){
   player.style.bottom = '0px';
   setPlayerPodePular(true);
   ResetaPontos();
-  randomizerObstaculos();
+  //randomizerObstaculos();
 
   intervaloChecarColisao = setInterval(colisao, 10);
   intervaloPontuacao = setInterval(Marcaponto, 2000);
-  intervaloRandomizer = setInterval(randomizerObstaculos, 2000);
+  setTimeout(randomizerObstaculos, 2000);
 }
 
 function setJogoEmExecucao(value) {
