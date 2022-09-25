@@ -1,7 +1,7 @@
 import {arrayObstaculos} from "./colisao.js"
 import { timerObstaculos } from "./pontuacao.js"
 let randomizer = 0, i;
-
+let tempo=0;
 function randomizerObstaculos(){
     console.log("randomizer");
     randomizer = getRandomInt(0, 2);
@@ -21,5 +21,15 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
 }
+//conta tempo
+function contatempo(){
+    tempo=tempo++;
+}
+function getTempo(){
+    return tempo;
+}
+function zeratempo(){
+    tempo=0;
+}
 
-export {randomizerObstaculos};
+export {randomizerObstaculos, zeratempo, contatempo, getTempo};
