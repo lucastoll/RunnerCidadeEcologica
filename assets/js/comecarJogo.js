@@ -23,7 +23,7 @@ buttonMenuInicial.addEventListener("click", () => { //Botao do menu inicial
   areaJogo.style.display = "block";
 })
 //Comecar o jogo no onClick do botão do menu e do botão de restart
-buttonComecarJogo.forEach((button, index) => {
+buttonComecarJogo.forEach((button) => {
   button.addEventListener('click', comecarJogo)
 })
 
@@ -46,7 +46,7 @@ function comecarJogo(){
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
   setTimeout(randomizerPowerups, 5000);
-  //setTimeout(randomizerObstaculos, 2000);
+  setTimeout(randomizerObstaculos, 2000);
 }
 
 function setJogoEmExecucao(value) {
