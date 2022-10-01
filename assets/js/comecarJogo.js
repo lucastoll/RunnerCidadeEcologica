@@ -46,7 +46,7 @@ function comecarJogo(){
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
   setTimeout(randomizerPowerups, 5000);
-  //setTimeout(randomizerObstaculos, 2000);
+  setTimeout(randomizerObstaculos, 2000);
 }
 
 function setJogoEmExecucao(value) {
