@@ -1,14 +1,14 @@
-import { timerObstaculos } from "../pontuacao.js";
 import { jogoEmExecucao } from "../comecarJogo.js";
-import { getRandomInt } from "../auxiliares/getRandomInt.js";
 import { arrayPowerups } from "./colisorPowerups.js"
+import { animacaoPowerupRodando } from "./animacaoPowerup.js";
+import { getRandomInt } from "../auxiliares/getRandomInt.js";
 
 let randomNumPowerup = 0, i;
 
 function randomizerPowerups(){
-    if(jogoEmExecucao){
-        randomNumPowerup = 0;
-        console.log(randomNumPowerup)
+    
+    if(jogoEmExecucao && animacaoPowerupRodando == false){
+        randomNumPowerup = getRandomInt(0, 3);
         for(i=0; i<arrayPowerups.length; i++){
             arrayPowerups[i].style.animation = "none";
         }

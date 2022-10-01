@@ -2,12 +2,13 @@ import { arrayObstaculos } from "./colisorObstaculos.js";
 import { timerObstaculos } from "./pontuacao.js";
 import { jogoEmExecucao } from "./comecarJogo.js";
 import { getRandomInt } from "./auxiliares/getRandomInt.js";
+import { animacaoPowerupRodando } from "./powerUps/animacaoPowerup.js";
 
 let randomNumObstaculo = 0, i, auxiliar;
 
 function randomizerObstaculos(){
 
-    if(jogoEmExecucao){
+    if(jogoEmExecucao && animacaoPowerupRodando == false){
         randomNumObstaculo = getRandomInt(0, 2);
         auxiliar = randomNumObstaculo;
         for(i=0; i<arrayObstaculos.length; i++){

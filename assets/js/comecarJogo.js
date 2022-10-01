@@ -23,7 +23,7 @@ buttonMenuInicial.addEventListener("click", () => { //Botao do menu inicial
   areaJogo.style.display = "block";
 })
 //Comecar o jogo no onClick do botão do menu e do botão de restart
-buttonComecarJogo.forEach((button, index) => {
+buttonComecarJogo.forEach((button) => {
   button.addEventListener('click', comecarJogo)
 })
 

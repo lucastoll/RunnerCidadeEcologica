@@ -14,10 +14,10 @@ body{
 }
 
 .pontuacao{
-	text-align: right;
+	text-align: center;
 	margin-top: 16px;
-	margin-right: 32px;
 	font-size: 32px;
 	font-family: 'Press Start 2P', cursive;
 }
+
 

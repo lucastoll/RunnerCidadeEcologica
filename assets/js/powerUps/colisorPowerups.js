@@ -25,7 +25,6 @@ function colisorPowerup(){
 
     if(playerEstaColidindoBicicleta){
       bicicleta();
-      console.log(`bicicleta ${posicaoPowerUpBicicleta} player ${posicaoPlayer}`)
     }
     else if(playerEstaColidindoOnibus){
       onibus();
