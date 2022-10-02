@@ -8,7 +8,8 @@ let randomNumPowerup = 0, i;
 function randomizerPowerups(){
     
     if(jogoEmExecucao && animacaoPowerupRodando == false){
-        randomNumPowerup = getRandomInt(0, 3);
+        //randomNumPowerup = getRandomInt(0, 3);
+        randomNumPowerup = 0;
         for(i=0; i<arrayPowerups.length; i++){
             arrayPowerups[i].style.animation = "none";
         }

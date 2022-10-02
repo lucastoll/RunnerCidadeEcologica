@@ -4,9 +4,11 @@ import { randomizerObstaculos } from "../randomizerObstaculos.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 
 let animacaoPowerupRodando = false;
+let playerTemPowerUp;
 
 function animacaoPowerUp(){
     animacaoPowerupRodando = true;
+    playerTemPowerUp = true;
     travaAnimacoes();
     animacaoPisca();
     //Após o fim da animação pisca...
@@ -39,4 +41,4 @@ function animacaoPisca(){
     player.style.animation = "pisca 3s linear 1";
 }
 
-export { animacaoPowerUp, animacaoPowerupRodando }
+export { animacaoPowerUp, animacaoPowerupRodando, playerTemPowerUp }

@@ -7,15 +7,20 @@ const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
 const powerUpOnibus = document.querySelector(".powerUp--onibus");
 const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
 
-let arrayPowerups = [powerUpBicicleta, powerUpOnibus, powerUpCarroEletrico];
-
 /* Define a colisão e condição de parada */
 let posicaoPlayer, posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico;
+
+const arrayPowerups = [powerUpBicicleta, powerUpOnibus, powerUpCarroEletrico];
+let arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
+
 
 function colisorPowerup(){
     posicaoPowerUpBicicleta = arrayPowerups[0].offsetLeft;
     posicaoPowerUpOnibus = arrayPowerups[1].offsetLeft;
     posicaoPowerUpCarroEletrico = arrayPowerups[2].offsetLeft;
+    arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
+    
+    console.log("bicicleta" + arrayPosicaoPowerups[0])
 
     posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
   
@@ -35,4 +40,4 @@ function colisorPowerup(){
   }
   
 
-export { colisorPowerup, arrayPowerups };
+export { colisorPowerup, arrayPowerups, arrayPosicaoPowerups };

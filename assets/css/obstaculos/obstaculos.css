@@ -23,9 +23,14 @@
 	width: 50px;
 	height: 50px;
 	left: 40px;
-	background-color: red;
+	background: red;
 	/*animation: pula linear infinite 1s;*/
 }
+
+.bicicleta{
+	background: orange;
+}
+
 .pula{
 	animation: pula linear infinite 1s !important;
 }
