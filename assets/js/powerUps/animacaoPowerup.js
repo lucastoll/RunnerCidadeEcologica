@@ -4,7 +4,7 @@ import { randomizerObstaculos } from "../randomizerObstaculos.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 
 let animacaoPowerupRodando = false;
-let playerTemPowerUp;
+let playerTemPowerUp = false;
 
 function animacaoPowerUp(){
     animacaoPowerupRodando = true;
@@ -26,6 +26,10 @@ function animacaoPowerUp(){
     }, 3000); 
 }
 
+function setPlayerTemPowerUp(value){
+    playerTemPowerUp = value;
+}
+
 function travaAnimacoes(){
     for(var i=0; i<arrayObstaculos.length; i++){
         arrayObstaculos[i].style.left = `${arrayPosicoesObstaculos[i]}px`
@@ -38,7 +42,8 @@ function animacaoPisca(){
     for(var i=0; i<arrayObstaculos.length; i++){
         arrayObstaculos[i].style.animation = "pisca 3s linear 1";
     }
-    player.style.animation = "pisca 3s linear 1";
+    console.log(player.style.animation)
+    player.style.animation = `pisca 3s linear 1`;
 }
 
-export { animacaoPowerUp, animacaoPowerupRodando, playerTemPowerUp }
+export { animacaoPowerUp, animacaoPowerupRodando, playerTemPowerUp, setPlayerTemPowerUp, animacaoPisca, travaAnimacoes }

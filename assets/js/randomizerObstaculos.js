@@ -19,7 +19,7 @@ function randomizerObstaculos(){
         setTimeout(() => {
             arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(timerObstaculos) / 1000}s`;
         }, 10);
-
+        
         if(playerTemBicicleta){
             setTimeout(randomizerObstaculos, 3000);
         }

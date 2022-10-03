@@ -1,13 +1,12 @@
 import { jogoEmExecucao } from "../comecarJogo.js";
 import { arrayPowerups } from "./colisorPowerups.js"
-import { animacaoPowerupRodando } from "./animacaoPowerup.js";
-import { getRandomInt } from "../auxiliares/getRandomInt.js";
+import { playerTemPowerUp } from "./animacaoPowerup.js";
 
 let randomNumPowerup = 0, i;
 
 function randomizerPowerups(){
     
-    if(jogoEmExecucao && animacaoPowerupRodando == false){
+    if(jogoEmExecucao && playerTemPowerUp == false){
         //randomNumPowerup = getRandomInt(0, 3);
         randomNumPowerup = 0;
         for(i=0; i<arrayPowerups.length; i++){

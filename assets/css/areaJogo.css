@@ -1,6 +1,6 @@
 body{
 	position: relative;
-	background: green;
+	background: #A1AAAA;
 }
 
 /*Mexe na area do jogo*/
@@ -10,7 +10,8 @@ body{
     height: 500px;
 	position: relative;
 	overflow: hidden;
-	background: white;
+	background: #696969;
+	
 }
 
 .pontuacao{
