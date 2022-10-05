@@ -6,16 +6,18 @@ import { randomizerPowerups } from "./randomizerPowerups.js";
 
 const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
 let playerTemBicicleta;
+let timeoutAnimacaoPowerUpBicicleta;
+let timeoutFimPowerUpBicicleta;
 
 function bicicleta(){
     playerTemBicicleta = true;
 
     animacaoPowerUp();
     addEstilosBicicleta();
-    setTimeout(() => {
+    timeoutAnimacaoPowerUpBicicleta = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
-    setTimeout(() => {
+    timeoutFimPowerUpBicicleta = setTimeout(() => {
         player.style = "";
         removeEstilosBicicleta();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
@@ -40,4 +42,4 @@ function addEstilosBicicleta(){
 }
 
 
-export { bicicleta, playerTemBicicleta }
+export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta }

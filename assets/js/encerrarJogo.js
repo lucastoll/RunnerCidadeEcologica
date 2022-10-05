@@ -1,6 +1,12 @@
 import { popUp, player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos } from "./colisorObstaculos.js";
 import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao } from "./comecarJogo.js";
+import { ponto } from "./pontuacao.js";
+import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
+import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
 import { arrayPowerups, arrayPosicaoPowerups } from "./powerUps/colisorPowerups.js";
+import { timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus } from "./powerUps/onibus.js";
+import { timeoutRecursivoRandomizerPowerups } from "./powerUps/randomizerPowerups.js";
+import { timeoutRecursivoRandomizerObstaculos } from "./randomizerObstaculos.js";
 
 export function encerrarJogo(){
     for(let i = 0; i < arrayObstaculos.length; i++) {
@@ -11,20 +17,30 @@ export function encerrarJogo(){
         arrayPowerups[i].style.animation = "none";
         arrayPowerups[i].style.left = `${arrayPosicaoPowerups[i]}px`;
     }
-    
-
-
-
 
     player.style.animation = "none";
     player.classList.remove("pula");
 
     player.style.bottom = `${posicaoPlayer}px`;
     popUp.style.display = "flex";
+    document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
+    setTimeout(() => {
+        document.querySelector(".buttonPopUp").disabled = false;
+    }, 1001)
     setJogoEmExecucao(false);
-    
+    limpaIntervalos();
+}
+
+function limpaIntervalos(){
+    clearTimeout(timeoutAnimacaoPowerUpBicicleta);
+    clearTimeout(timeoutFimPowerUpBicicleta);
+    clearTimeout(timeoutAnimacaoPowerUpOnibus);
+    clearTimeout(timeoutFimPowerUpOnibus);
+    clearTimeout(timeoutAnimacaoPowerUpCarroEletrico);
+    clearTimeout(timeoutFimPowerUpCarroEletrico);
+    clearTimeout(timeoutRecursivoRandomizerObstaculos);
+    clearTimeout(timeoutRecursivoRandomizerPowerups);
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);
     clearInterval(intervaloPontuacao);
 }
-

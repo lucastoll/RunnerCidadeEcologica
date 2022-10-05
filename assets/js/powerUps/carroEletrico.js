@@ -6,16 +6,18 @@ import { randomizerPowerups } from "./randomizerPowerups.js";
 
 const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
 let playerTemCarroEletrico = false;
+let timeoutAnimacaoPowerUpCarroEletrico;
+let timeoutFimPowerUpCarroEletrico;
 
 function carroEletrico(){
     playerTemCarroEletrico = true;
     
     animacaoPowerUp();
     addEstilosCarroEletrico();
-    setTimeout(() => {
+    timeoutAnimacaoPowerUpCarroEletrico = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
-    setTimeout(() => {
+    timeoutFimPowerUpCarroEletrico = setTimeout(() => {
         player.style = "";
         removeEstilosCarroEletrico();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
@@ -38,4 +40,4 @@ function removeEstilosCarroEletrico(){
     document.querySelector("body").style.background = "#A1AAAA";
 }
 
-export { carroEletrico, playerTemCarroEletrico }
+export { carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico }

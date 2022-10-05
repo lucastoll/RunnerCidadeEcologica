@@ -27,4 +27,4 @@ function setTimerObstaculos(value){
     timerObstaculos = value;
 }
 
-export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos};
+export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto};

@@ -4,7 +4,7 @@
 	bottom: 0px;
 	width: 50px;
 	height: 50px;
-	right: -20%;
+	right: -50%;
 	background-color: rgb(255, 0, 0);	
 }
 /*Mexe na obstaculo aéreo placa*/
@@ -13,7 +13,7 @@
 	bottom: 100px;
 	width: 50px;
 	height: 50px;
-	right: -20%;
+	right: -50%;
 	background-color: rgb(128, 0, 100);
 }
 
@@ -21,7 +21,7 @@
 /*Animação do primeiro obstaculo*/
 @keyframes carroparado {
 	0%{
-		right: -5%;
+		right: -10%;
 	}
 	50%{
 		right: 100%;

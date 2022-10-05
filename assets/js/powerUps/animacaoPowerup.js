@@ -14,7 +14,7 @@ function animacaoPowerUp(){
     setTimeout(() => {
         for(var i=0; i<arrayObstaculos.length; i++){
             arrayObstaculos[i].style.left = "auto";
-            arrayObstaculos[i].style.right = "-10%";
+            arrayObstaculos[i].style.right = "-20%";
         }
         player.style.bottom = "0px";
         player.style = "";

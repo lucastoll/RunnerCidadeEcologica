@@ -6,16 +6,19 @@ import { randomizerPowerups } from "./randomizerPowerups.js";
 
 const powerUpOnibus = document.querySelector(".powerUp--onibus");
 let playerTemOnibus = false;
+let timeoutAnimacaoPowerUpOnibus;
+let timeoutFimPowerUpOnibus;
 
 function onibus(){
     playerTemOnibus = true;
+    
 
     animacaoPowerUp();
     addEstilosOnibus();
-    setTimeout(() => {
+    timeoutAnimacaoPowerUpOnibus = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
-    setTimeout(() => {
+    timeoutFimPowerUpOnibus = setTimeout(() => {
         player.style = "";
         removeEstilosOnibus();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
@@ -37,4 +40,4 @@ function removeEstilosOnibus(){
     document.querySelector("body").style.background = "#A1AAAA";
 }
 
-export { onibus, playerTemOnibus }
+export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus }

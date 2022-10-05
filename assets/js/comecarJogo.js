@@ -42,6 +42,8 @@ function comecarJogo(){
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style.bottom = '0px';
+  document.querySelector(".buttonPopUp").disabled = true;
+
   
   setPlayerPodePular(true);
   ResetaPontos();

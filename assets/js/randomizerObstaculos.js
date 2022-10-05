@@ -7,6 +7,7 @@ import { playerTemBicicleta } from "./powerUps/bicicleta.js";
 import { playerTemCarroEletrico } from "./powerUps/carroEletrico.js";
 
 let randomNumObstaculo = 0, i;
+let timeoutRecursivoRandomizerObstaculos;
 
 function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
@@ -27,15 +28,15 @@ function randomizerObstaculos(){
         }
         
         if(playerTemBicicleta){
-            setTimeout(randomizerObstaculos, 3000);
+            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 3000);
         }
         else if(playerTemCarroEletrico){
-            setTimeout(randomizerObstaculos, 2500);
+            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 2500);
         }
         else{
-            setTimeout(randomizerObstaculos, timerObstaculos);
+            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, timerObstaculos);
         }
     }
 }
 
-export {randomizerObstaculos};
+export { randomizerObstaculos, timeoutRecursivoRandomizerObstaculos };
