@@ -1,7 +1,7 @@
 import { getRandomInt } from "../auxiliares/getRandomInt.js";
 import { player } from "../colisorObstaculos.js";
 import { areaJogo } from "../comecarJogo.js";
-import { animacaoPisca, animacaoPowerUp, setPlayerTemPowerUp, travaAnimacoes } from "./animacaoPowerup.js";
+import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 
 const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
@@ -14,12 +14,12 @@ function bicicleta(){
     addEstilosBicicleta();
     setTimeout(() => {
         animacaoPowerUp();
-    }, 17000)
+    }, 20000);
     setTimeout(() => {
         player.style = "";
         removeEstilosBicicleta();
-        setTimeout(randomizerPowerups, getRandomInt(20000, 35000))
-    }, 20000);
+        setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+    }, 23000);
 }
 
 

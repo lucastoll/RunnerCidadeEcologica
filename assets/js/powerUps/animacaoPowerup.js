@@ -1,7 +1,6 @@
 
 import { player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos  } from "../colisorObstaculos.js";
 import { randomizerObstaculos } from "../randomizerObstaculos.js";
-import { randomizerPowerups } from "./randomizerPowerups.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;
@@ -21,7 +20,6 @@ function animacaoPowerUp(){
         player.style = "";
 
         animacaoPowerupRodando = false;
-        setTimeout(randomizerPowerups, 5000);
         setTimeout(randomizerObstaculos, 2000);
     }, 3000); 
 }

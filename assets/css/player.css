@@ -1,0 +1,51 @@
+/*Mexe no jogador*/
+.player{
+	position: absolute;
+	bottom: 0px;
+	width: 50px;
+	height: 50px;
+	left: 40px;
+	background: red;
+	/*animation: pula linear infinite 1s;*/
+}
+
+.bicicleta{
+	background: orange;
+}
+
+.onibus{
+	animation: pisca 3s infinite;
+	background: #E6CC0E;
+	z-index: 2;
+}
+
+.carroEletrico{
+    background: white;
+}
+
+.pula{
+	animation: pula linear infinite 1s !important;
+}
+
+.pulaOnibus{
+	animation: pula linear infinite 1s, pisca 3s infinite;
+}
+
+@keyframes pula {
+	0%{
+		bottom: 0px;
+	}
+
+	45%{
+		bottom: 100px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	55%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
