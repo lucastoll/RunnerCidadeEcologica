@@ -4,11 +4,11 @@
     bottom: 65px;
     display: flex;
     flex-direction: column;
-    height: 30px;
+    height: 40px;
     justify-content: center;
     position: absolute;
     right: -10%;
-    width: 30px;
+    width: 40px;
     color: white;
     /* animation: powerUpKeyframe 5s infinite linear; */
 }
@@ -18,7 +18,9 @@
 }
 
 .powerUp--bicicleta{
-    background: orange;
+    background-image: url(../img/powerUp/bicicleta.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .powerUp--bicicleta::after{
@@ -28,8 +30,9 @@
 }
 
 .powerUp--onibus{
-    background: #80CFFF;
-}
+    background-image: url(../img/powerUp/onibus.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;}
 
 .powerUp--onibus::after{
     content: 'onibus';
@@ -38,8 +41,9 @@
 }
 
 .powerUp--carroEletrico{
-    background: #4C5660;
-}
+    background-image: url(../img/powerUp/carroEletrico.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;}
 
 .powerUp--carroEletrico::after{
     content: 'carroEletrico';

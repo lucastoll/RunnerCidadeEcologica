@@ -1,7 +1,7 @@
-import { player } from "./colisorObstaculos.js";
-import { jogoEmExecucao } from "./comecarJogo.js";
-import { animacaoPowerupRodando } from "./powerUps/animacaoPowerup.js";
-import { playerTemOnibus } from "./powerUps/onibus.js";
+import { player } from "../colisorObstaculos.js";
+import { jogoEmExecucao } from "../comecarJogo.js";
+import { animacaoPowerupRodando } from "../powerUps/animacaoPowerup.js";
+import { playerTemOnibus } from "../powerUps/onibus.js";
 
 var playerPodePular = false;
 

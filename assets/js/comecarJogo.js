@@ -1,4 +1,4 @@
-import { setPlayerPodePular }  from "./pulo.js";
+import { setPlayerPodePular }  from "./player/pulo.js";
 import { player, colisorObstaculos, popUp, obstaculoUm, obstaculoDois, arrayObstaculos, arrayPosicoesObstaculos } from "./colisorObstaculos.js"
 import { Marcaponto, ResetaPontos} from "./pontuacao.js";
 import { randomizerObstaculos } from "./randomizerObstaculos.js";

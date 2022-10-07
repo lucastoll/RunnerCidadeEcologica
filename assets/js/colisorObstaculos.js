@@ -22,7 +22,7 @@ function colisorObstaculos(){
     (posicaoObstaculoUm < 92 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
     (posicaoObstaculoDois < 92 && posicaoObstaculoDois > 0 && posicaoPlayer > 50)
     
-    if(playerEstaColidindo && playerTemOnibus == false){
+    if(playerEstaColidindo && playerTemOnibus == false && true == false){
       encerrarJogo()
     }
 }
