@@ -1,5 +1,5 @@
 import { getRandomInt } from "../auxiliares/getRandomInt.js";
-import { player } from "../colisorObstaculos.js";
+import { player } from "../obstaculos/colisorObstaculos.js";
 import { areaJogo } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";

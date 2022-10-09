@@ -1,5 +1,5 @@
-import { encerrarJogo } from "./encerrarJogo.js";
-import { playerTemOnibus } from "./powerUps/onibus.js";
+import { encerrarJogo } from "../encerrarJogo.js";
+import { playerTemOnibus } from "../powerUps/onibus.js";
 
 const player = document.querySelector(".player");
 const obstaculoUm = document.querySelector(".obstaculocarro");

@@ -1,6 +1,6 @@
 
-import { player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos  } from "../colisorObstaculos.js";
-import { randomizerObstaculos } from "../randomizerObstaculos.js";
+import { player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
+import { randomizerObstaculos } from "../obstaculos/randomizerObstaculos.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;

@@ -1,4 +1,4 @@
-import { player } from "../colisorObstaculos.js";
+import { player } from "../obstaculos/colisorObstaculos.js";
 import { jogoEmExecucao } from "../comecarJogo.js";
 import { animacaoPowerupRodando } from "../powerUps/animacaoPowerup.js";
 import { playerTemOnibus } from "../powerUps/onibus.js";

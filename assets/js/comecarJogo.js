@@ -1,9 +1,9 @@
 import { setPlayerPodePular }  from "./player/pulo.js";
-import { player, colisorObstaculos, popUp, obstaculoUm, obstaculoDois, arrayObstaculos, arrayPosicoesObstaculos } from "./colisorObstaculos.js"
+import { player, colisorObstaculos, popUp, arrayObstaculos } from "./obstaculos/colisorObstaculos.js"
 import { Marcaponto, ResetaPontos} from "./pontuacao.js";
-import { randomizerObstaculos } from "./randomizerObstaculos.js";
+import { randomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
 import { randomizerPowerups } from "./powerUps/randomizerPowerups.js";
-import { arrayPowerups, arrayPosicaoPowerups, colisorPowerup } from "./powerUps/colisorPowerups.js";
+import { arrayPowerups, colisorPowerup } from "./powerUps/colisorPowerups.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");

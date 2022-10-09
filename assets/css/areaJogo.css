@@ -10,8 +10,30 @@ body{
     height: 500px;
 	position: relative;
 	overflow: hidden;
-	background: #696969;
-	
+    background-image: url(../img/cidadePoluidaBackground.jpg);
+    background-size: 220% 100%;
+	animation: backgroundCarro 1000s;
+}
+
+@media screen and (min-width: 1024px) {
+	.areajogo1{
+		background-size: 150% 100%;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.areajogo1{
+		background-size: 100% 100%;
+	}
+}
+
+@keyframes mobileCarro {
+	0%{
+		background-position: 0px;
+	}
+	100%{
+		background-position: -100000px;
+	}
 }
 
 .pontuacao{

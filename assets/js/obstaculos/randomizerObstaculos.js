@@ -1,10 +1,10 @@
 import { arrayObstaculos } from "./colisorObstaculos.js";
-import { timerObstaculos } from "./pontuacao.js";
-import { jogoEmExecucao } from "./comecarJogo.js";
-import { getRandomInt } from "./auxiliares/getRandomInt.js";
-import { animacaoPowerupRodando } from "./powerUps/animacaoPowerup.js";
-import { playerTemBicicleta } from "./powerUps/bicicleta.js";
-import { playerTemCarroEletrico } from "./powerUps/carroEletrico.js";
+import { timerObstaculos } from "../pontuacao.js";
+import { jogoEmExecucao } from "../comecarJogo.js";
+import { getRandomInt } from "../auxiliares/getRandomInt.js";
+import { animacaoPowerupRodando } from "../powerUps/animacaoPowerup.js";
+import { playerTemBicicleta } from "../powerUps/bicicleta.js";
+import { playerTemCarroEletrico } from "../powerUps/carroEletrico.js";
 
 let randomNumObstaculo = 0, i;
 let timeoutRecursivoRandomizerObstaculos;

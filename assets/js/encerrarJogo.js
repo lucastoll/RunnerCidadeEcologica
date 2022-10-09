@@ -1,4 +1,4 @@
-import { popUp, player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos } from "./colisorObstaculos.js";
+import { popUp, player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
 import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
@@ -6,7 +6,7 @@ import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } f
 import { arrayPowerups, arrayPosicaoPowerups } from "./powerUps/colisorPowerups.js";
 import { timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus } from "./powerUps/onibus.js";
 import { timeoutRecursivoRandomizerPowerups } from "./powerUps/randomizerPowerups.js";
-import { timeoutRecursivoRandomizerObstaculos } from "./randomizerObstaculos.js";
+import { timeoutRecursivoRandomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
 
 export function encerrarJogo(){
     for(let i = 0; i < arrayObstaculos.length; i++) {
