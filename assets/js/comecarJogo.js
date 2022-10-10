@@ -4,6 +4,7 @@ import { Marcaponto, ResetaPontos} from "./pontuacao.js";
 import { randomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
 import { randomizerPowerups } from "./powerUps/randomizerPowerups.js";
 import { arrayPowerups, colisorPowerup } from "./powerUps/colisorPowerups.js";
+import { iniciaNuvens } from "./nuvem/nuvens.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -39,12 +40,13 @@ function comecarJogo(){
     arrayPowerups[i].style.right = `-20%`;
   }
 
+  areaJogo.style.animation = "backgroundCarro 1000s infinite";
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style.bottom = '0px';
   document.querySelector(".buttonPopUp").disabled = true;
-
   
+  iniciaNuvens();
   setPlayerPodePular(true);
   ResetaPontos();
 

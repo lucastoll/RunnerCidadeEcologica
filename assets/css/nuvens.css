@@ -1,0 +1,257 @@
+.nuvens{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    z-index: -2;
+}
+
+.nuvem{
+    display: none;
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    right: 3000px;
+}
+
+.nuvens__poluidas__front{
+    filter: grayscale(1);
+    z-index: -3;
+}
+
+.nuvens__poluidas__back .nuvem, .nuvens__limpas__back .nuvem{
+    transform: scale(0.15);
+}
+
+.nuvens__poluidas__front .nuvem, .nuvens__limpas__front .nuvem{
+    transform: scale(0.35);
+}
+
+.nuvens__limpas__back .nuvem, .nuvens__limpas__front .nuvem{
+    visibility: hidden;
+}
+
+@media screen and (min-width: 1024px){
+    .nuvens__poluidas__back .nuvem, .nuvens__limpas__back .nuvem{
+        transform: scale(0.35);
+    }
+    .nuvens__poluidas__front .nuvem, .nuvens__limpas__front .nuvem{
+        transform: scale(0.60);
+    }
+}
+
+.nuvens__poluidas__back__nuvem--1, .nuvens__limpas__back__nuvem--1{
+    display: block;
+    animation: animacaoInicialNuvem1 50s linear;
+}
+.nuvens__poluidas__front__nuvem--1, .nuvens__limpas__front__nuvem--1{
+    display: block;
+    animation: animacaoInicialNuvem1 20s linear;
+}
+
+.nuvens__poluidas__back__nuvem--2, .nuvens__limpas__back__nuvem--2{
+    display: block;
+    animation: animacaoInicialNuvem2 45s linear;
+}
+.nuvens__poluidas__front__nuvem--2, .nuvens__limpas__front__nuvem--2{
+    display: block;
+    animation: animacaoInicialNuvem2 25s linear;
+}
+
+.nuvens__poluidas__back__nuvem--3, .nuvens__limpas__back__nuvem--3{
+    display: block;
+    animation: animacaoInicialNuvem3 55s linear;
+}
+
+.nuvens__poluidas__front__nuvem--3, .nuvens__limpas__front__nuvem--3{
+    display: block;
+    animation: animacaoInicialNuvem3 30s linear;
+}
+
+.nuvens__poluidas__back__nuvem--4, .nuvens__limpas__back__nuvem--4{
+    display: block;
+    animation: animacaoInicialNuvem4 51s linear;
+}
+
+.nuvens__poluidas__front__nuvem--4, .nuvens__limpas__front__nuvem--4{
+    display: block;
+    animation: animacaoInicialNuvem4 20s linear;
+}
+
+.nuvens__poluidas__back__nuvem--5, .nuvens__limpas__back__nuvem--5{
+    display: block;
+    animation: animacaoInicialNuvem5 60s linear;
+}
+
+.nuvens__poluidas__front__nuvem--5, .nuvens__limpas__front__nuvem--5{
+    display: block;
+    animation: animacaoInicialNuvem5 23s linear;
+}
+
+.nuvens__poluidas__back__nuvem--6, .nuvens__limpas__back__nuvem--6{
+    display: block;
+    animation: animacaoInicialNuvem6 40s linear;
+}
+
+.nuvens__poluidas__front__nuvem--6, .nuvens__limpas__front__nuvem--6{
+    display: block;
+    animation: animacaoInicialNuvem6 20s linear;
+}
+
+
+.nuvens__poluidas__back__nuvem--7, .nuvens__limpas__back__nuvem--7{
+    display: block;
+    animation: animacaoInicialNuvem7 46s linear;
+}
+
+
+.nuvens__poluidas__front__nuvem--7, .nuvens__limpas__front__nuvem--7{
+    display: block;
+    animation: animacaoInicialNuvem7 29s linear;
+}
+
+
+.nuvens__poluidas__back__nuvem--8, .nuvens__limpas__back__nuvem--8{
+    display: block;
+    animation: animacaoInicialNuvem8 50s linear;
+}
+
+
+.nuvens__poluidas__front__nuvem--8, .nuvens__limpas__front__nuvem--8{
+    display: block;
+    animation: animacaoInicialNuvem8 30s linear;
+}
+
+@keyframes animacaoInicialNuvem1{
+    0%{
+        right: -500px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem2{
+    0%{
+        right: 0px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem3{
+    0%{
+        right: -200px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem4{
+    0%{
+        right: 200px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem4{
+    0%{
+        right: 400px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem5{
+    0%{
+        right: -100px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem6{
+    0%{
+        right: 100px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem7{
+    0%{
+        right: 260px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoInicialNuvem8{
+    0%{
+        right: 700px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+@keyframes animacaoNuvem{
+    0%{
+        right: -500px;
+    }
+    100%{
+        right: 110vw;
+    }
+}
+
+.someNuvemPoluida{
+    animation: someNuvemPoluida 3s linear;
+}
+
+@keyframes someNuvemPoluida {
+    0%{
+        visibility: visible;
+    }
+    11%{
+        visibility: hidden;
+    }
+    22%{
+        visibility: visible;
+    }
+    33%{
+        visibility: hidden;
+    }
+    44%{
+        visibility: visible;
+    }
+    55%{
+        visibility: hidden;
+    }
+    66%{
+        visibility: visible;
+    }
+    77%{
+        visibility: hidden;
+    }
+    88%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+
+.apareceNuvemLimpa{
+
+}
+
+@keyframes identifier {
+    
+}

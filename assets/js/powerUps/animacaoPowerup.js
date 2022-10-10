@@ -1,15 +1,23 @@
 
+import { animacaoNuvemLimpaParaNuvemPoluida, animacaoNuvemPoluidaParaNuvemLimpa } from "../nuvem/nuvens.js";
 import { player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
 import { randomizerObstaculos } from "../obstaculos/randomizerObstaculos.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;
 
-function animacaoPowerUp(){
+function animacaoPowerUp(statusPowerUp){
     animacaoPowerupRodando = true;
     playerTemPowerUp = true;
     travaAnimacoes();
     animacaoPisca();
+    if(statusPowerUp == "entradaPowerUp"){
+        animacaoNuvemPoluidaParaNuvemLimpa();
+    }
+    else{
+        animacaoNuvemLimpaParaNuvemPoluida();
+    }
+
     //Após o fim da animação pisca...
     setTimeout(() => {
         for(var i=0; i<arrayObstaculos.length; i++){
@@ -23,6 +31,7 @@ function animacaoPowerUp(){
         setTimeout(randomizerObstaculos, 2000);
     }, 3000); 
 }
+
 
 function setPlayerTemPowerUp(value){
     playerTemPowerUp = value;

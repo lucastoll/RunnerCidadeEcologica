@@ -12,7 +12,7 @@ let timeoutFimPowerUpCarroEletrico;
 function carroEletrico(){
     playerTemCarroEletrico = true;
     
-    animacaoPowerUp();
+    animacaoPowerUp("entradaPowerUp");
     addEstilosCarroEletrico();
     timeoutAnimacaoPowerUpCarroEletrico = setTimeout(() => {
         animacaoPowerUp();

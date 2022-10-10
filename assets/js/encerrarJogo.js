@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -21,12 +21,19 @@ export function encerrarJogo(){
     player.style.animation = "none";
     player.classList.remove("pula");
 
+
+    let backgroundPosition = window.getComputedStyle(areaJogo).backgroundPosition;
+    
+    areaJogo.style.animation = "none";
+    areaJogo.style.backgroundPosition = backgroundPosition;
+
     player.style.bottom = `${posicaoPlayer}px`;
     popUp.style.display = "flex";
     document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
     setTimeout(() => {
         document.querySelector(".buttonPopUp").disabled = false;
     }, 1001)
+
     setJogoEmExecucao(false);
     limpaIntervalos();
 }

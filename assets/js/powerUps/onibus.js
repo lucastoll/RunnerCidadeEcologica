@@ -13,7 +13,7 @@ function onibus(){
     playerTemOnibus = true;
     
 
-    animacaoPowerUp();
+    animacaoPowerUp("entradaPowerUp");
     addEstilosOnibus();
     timeoutAnimacaoPowerUpOnibus = setTimeout(() => {
         animacaoPowerUp();

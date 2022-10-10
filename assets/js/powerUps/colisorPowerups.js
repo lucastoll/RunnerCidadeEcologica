@@ -20,8 +20,6 @@ function colisorPowerup(){
     posicaoPowerUpCarroEletrico = arrayPowerups[2].offsetLeft;
     arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
     
-    console.log("bicicleta" + arrayPosicaoPowerups[0])
-
     posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
   
     const playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < 92 && posicaoPlayer > 15 && posicaoPlayer < 95) 

@@ -12,7 +12,7 @@ let timeoutFimPowerUpBicicleta;
 function bicicleta(){
     playerTemBicicleta = true;
 
-    animacaoPowerUp();
+    animacaoPowerUp("entradaPowerUp");
     addEstilosBicicleta();
     timeoutAnimacaoPowerUpBicicleta = setTimeout(() => {
         animacaoPowerUp();

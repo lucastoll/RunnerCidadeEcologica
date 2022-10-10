@@ -1,3 +1,4 @@
+import { jogoEmExecucao } from "../comecarJogo.js";
 import { player } from "../obstaculos/colisorObstaculos.js";
 import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
 import { playerTemBicicleta } from "../powerUps/bicicleta.js";
@@ -14,17 +15,19 @@ const arrayPlayerWalking = [playerWalking2, playerWalking3, playerWalking4, play
 let spriteAtual = 0;
 
 const loopSpritesPlayer = setInterval(() => {
-    if(playerTemPowerUp == false){
-        spritesPlayerAndando();
-    }
-    else if(playerTemBicicleta){
-
-    }
-    else if(playerTemOnibus){
-
-    }
-    else if(playerTemCarroEletrico){
-
+    if(jogoEmExecucao){
+        if(playerTemPowerUp == false){
+            spritesPlayerAndando();
+        }
+        else if(playerTemBicicleta){
+    
+        }
+        else if(playerTemOnibus){
+    
+        }
+        else if(playerTemCarroEletrico){
+    
+        }
     }
 }, 250); 
 

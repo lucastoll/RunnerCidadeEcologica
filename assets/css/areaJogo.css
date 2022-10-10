@@ -12,7 +12,8 @@ body{
 	overflow: hidden;
     background-image: url(../img/cidadePoluidaBackground.jpg);
     background-size: 220% 100%;
-	animation: backgroundCarro 1000s;
+	animation: backgroundCarro 1000s infinite;
+	z-index: -2;
 }
 
 @media screen and (min-width: 1024px) {
@@ -27,7 +28,7 @@ body{
 	}
 }
 
-@keyframes mobileCarro {
+@keyframes backgroundCarro {
 	0%{
 		background-position: 0px;
 	}
@@ -41,6 +42,7 @@ body{
 	margin-top: 16px;
 	font-size: 32px;
 	font-family: 'Press Start 2P', cursive;
+	z-index: 100000 !important;
 }
 
 
