@@ -23,6 +23,15 @@ function onibus(){
         player.style = "";
         removeEstilosOnibus();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+        if(window.innerWidth < 1024){
+            areaJogo.style.backgroundSize = "220% 100%"
+          }
+          else if(window.innerWidth >= 1440){
+            areaJogo.style.backgroundSize = "100% 100%"
+          }
+          else if(window.innerWidth >= 1024){
+            areaJogo.style.backgroundSize = "150% 100%"
+          }
         limpaSprites();
     }, 23000);
 }
@@ -36,8 +45,8 @@ function addEstilosOnibus(){
 function removeEstilosOnibus(){
     setPlayerTemPowerUp(false);
     playerTemOnibus = false;
-    areaJogo.style.background = "#3c3c3c";
+    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
 }
 
-export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus }
+export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus }

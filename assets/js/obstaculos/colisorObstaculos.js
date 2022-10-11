@@ -33,7 +33,7 @@ function colisorObstaculos(){
     }
   
     
-    if(playerEstaColidindo && playerTemOnibus == false && false == true){
+    if(playerEstaColidindo && playerTemOnibus == false){
       encerrarJogo()
     }
 }

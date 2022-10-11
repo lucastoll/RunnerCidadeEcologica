@@ -226,4 +226,14 @@ function animacaoNuvemLimpaParaNuvemPoluida(){
     }, 3000)
 }
 
-export { iniciaNuvens, arrayNuvensLimpasBack, arrayNuvensLimpasFront, arrayNuvensPoluidasBack, arrayNuvensPoluidasFront, animacaoNuvemPoluidaParaNuvemLimpa, animacaoNuvemLimpaParaNuvemPoluida }
+function colocaNuvensSujasAoReiniciarJogo(){
+    for(let i=0; i < arrayNuvensLimpasBack.length; i++){
+        arrayNuvensPoluidasBack[i].style.visibility = "visible";
+        arrayNuvensPoluidasFront[i].style.visibility = "visible";
+        
+        arrayNuvensLimpasBack[i].style.visibility = "hidden";
+        arrayNuvensLimpasFront[i].style.visibility = "hidden";
+    }
+}
+
+export { iniciaNuvens, arrayNuvensLimpasBack, arrayNuvensLimpasFront, arrayNuvensPoluidasBack, arrayNuvensPoluidasFront, animacaoNuvemPoluidaParaNuvemLimpa, animacaoNuvemLimpaParaNuvemPoluida, colocaNuvensSujasAoReiniciarJogo }

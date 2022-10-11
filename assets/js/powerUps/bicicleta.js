@@ -23,24 +23,33 @@ function bicicleta(){
         player.style = "";
         removeEstilosBicicleta();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+        if(window.innerWidth < 1024){
+            areaJogo.style.backgroundSize = "220% 100%"
+          }
+          else if(window.innerWidth >= 1440){
+            areaJogo.style.backgroundSize = "100% 100%"
+          }
+          else if(window.innerWidth >= 1024){
+            areaJogo.style.backgroundSize = "150% 100%"
+          }
         limpaSprites();
     }, 23000);
 }
 
 
-function removeEstilosBicicleta(){
-    setPlayerTemPowerUp(false);
-    playerTemBicicleta = false;
-    areaJogo.style.background = "#3c3c3c";
-    document.querySelector("body").style.background = "#A1AAAA";
-}
-
 function addEstilosBicicleta(){
     powerUpBicicleta.style.animation = "none";
     powerUpBicicleta.style.right = "-10%";
-    areaJogo.style.background = "#005CC1";
+    areaJogo.style.background = "#51BFFE";
     document.querySelector("body").style.background = "#009A17";
 }
 
+function removeEstilosBicicleta(){
+    setPlayerTemPowerUp(false);
+    playerTemBicicleta = false;
+    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
+    document.querySelector("body").style.background = "#A1AAAA";
+}
 
-export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta }
+
+export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta, removeEstilosBicicleta }

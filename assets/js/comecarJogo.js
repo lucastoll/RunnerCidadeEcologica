@@ -4,7 +4,11 @@ import { Marcaponto, ResetaPontos} from "./pontuacao.js";
 import { randomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
 import { randomizerPowerups } from "./powerUps/randomizerPowerups.js";
 import { arrayPowerups, colisorPowerup } from "./powerUps/colisorPowerups.js";
-import { iniciaNuvens } from "./nuvem/nuvens.js";
+import { iniciaNuvens, colocaNuvensSujasAoReiniciarJogo } from "./nuvem/nuvens.js";
+import { removeEstilosBicicleta } from "./powerUps/bicicleta.js";
+import { removeEstilosCarroEletrico } from "./powerUps/carroEletrico.js";
+import { removeEstilosOnibus } from "./powerUps/onibus.js";
+import { limpaSprites } from "./player/sprites.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -45,7 +49,10 @@ function comecarJogo(){
   player.classList.remove("pula");
   player.style.bottom = '0px';
   document.querySelector(".buttonPopUp").disabled = true;
-  
+
+  colocaNuvensSujasAoReiniciarJogo();
+  limpaSprites();
+  removeEstilosPowerup();
   iniciaNuvens();
   setPlayerPodePular(true);
   ResetaPontos();
@@ -60,6 +67,22 @@ function comecarJogo(){
 
 function setJogoEmExecucao(value) {
     jogoEmExecucao = value; 
+}
+
+function removeEstilosPowerup(){
+  removeEstilosBicicleta();
+  removeEstilosCarroEletrico();
+  removeEstilosOnibus();
+
+  if(window.innerWidth < 1024){
+    areaJogo.style.backgroundSize = "220% 100%"
+  }
+  else if(window.innerWidth >= 1440){
+    areaJogo.style.backgroundSize = "100% 100%"
+  }
+  else if(window.innerWidth >= 1024){
+    areaJogo.style.backgroundSize = "150% 100%"
+  }
 }
 
 export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo};

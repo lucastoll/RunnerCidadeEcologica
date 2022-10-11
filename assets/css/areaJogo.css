@@ -10,7 +10,7 @@ body{
     height: 500px;
 	position: relative;
 	overflow: hidden;
-    background-image: url(../img/cidadePoluidaBackground.jpg);
+    background: url(../img/cidadePoluidaBackground.jpg);
     background-size: 220% 100%;
 	animation: backgroundCarro 1000s infinite;
 	z-index: -2;

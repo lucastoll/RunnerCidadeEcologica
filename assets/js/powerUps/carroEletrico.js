@@ -23,6 +23,15 @@ function carroEletrico(){
         player.style = "";
         removeEstilosCarroEletrico();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+        if(window.innerWidth < 1024){
+            areaJogo.style.backgroundSize = "220% 100%"
+          }
+          else if(window.innerWidth >= 1440){
+            areaJogo.style.backgroundSize = "100% 100%"
+          }
+          else if(window.innerWidth >= 1024){
+            areaJogo.style.backgroundSize = "150% 100%"
+          }
         limpaSprites();
     }, 23000);
 }
@@ -37,8 +46,8 @@ function addEstilosCarroEletrico(){
 function removeEstilosCarroEletrico(){
     setPlayerTemPowerUp(false);
     playerTemCarroEletrico = false;
-    areaJogo.style.background = "#3c3c3c";
+    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
 }
 
-export { carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico }
+export { carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico }
