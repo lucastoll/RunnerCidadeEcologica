@@ -3,6 +3,7 @@ import { player } from "../obstaculos/colisorObstaculos.js";
 import { areaJogo } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
+import { limpaSprites } from "../player/sprites.js";
 
 const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
 let playerTemCarroEletrico = false;
@@ -10,6 +11,7 @@ let timeoutAnimacaoPowerUpCarroEletrico;
 let timeoutFimPowerUpCarroEletrico;
 
 function carroEletrico(){
+    limpaSprites();
     playerTemCarroEletrico = true;
     
     animacaoPowerUp("entradaPowerUp");
@@ -21,13 +23,13 @@ function carroEletrico(){
         player.style = "";
         removeEstilosCarroEletrico();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+        limpaSprites();
     }, 23000);
 }
 
 function addEstilosCarroEletrico(){
     powerUpCarroEletrico.style.animation = "none";
     powerUpCarroEletrico.style.right = "-10%";
-    player.classList.add("carroEletrico");
     areaJogo.style.background = "#005CC1";
     document.querySelector("body").style.background = "#A1AAAA";
 }
@@ -35,7 +37,6 @@ function addEstilosCarroEletrico(){
 function removeEstilosCarroEletrico(){
     setPlayerTemPowerUp(false);
     playerTemCarroEletrico = false;
-    player.classList.remove("carroEletrico");
     areaJogo.style.background = "#3c3c3c";
     document.querySelector("body").style.background = "#A1AAAA";
 }

@@ -30,12 +30,13 @@ export function encerrarJogo(){
     player.style.bottom = `${posicaoPlayer}px`;
     popUp.style.display = "flex";
     document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
-    setTimeout(() => {
-        document.querySelector(".buttonPopUp").disabled = false;
-    }, 1001)
 
     setJogoEmExecucao(false);
     limpaIntervalos();
+
+    setTimeout(() => {
+        document.querySelector(".buttonPopUp").disabled = false;
+    }, 2001)
 }
 
 function limpaIntervalos(){

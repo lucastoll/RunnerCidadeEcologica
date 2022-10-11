@@ -1,3 +1,4 @@
+import { playerTemPowerUp } from "./animacaoPowerup.js";
 import { bicicleta } from "./bicicleta.js";
 import { carroEletrico } from "./carroEletrico.js";
 import { onibus } from "./onibus.js";
@@ -13,6 +14,7 @@ let posicaoPlayer, posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUp
 const arrayPowerups = [powerUpBicicleta, powerUpOnibus, powerUpCarroEletrico];
 let arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
 
+let playerEstaColidindoBicicleta, playerEstaColidindoOnibus, playerEstaColidindoCarroEletrico;
 
 function colisorPowerup(){
     posicaoPowerUpBicicleta = arrayPowerups[0].offsetLeft;
@@ -22,9 +24,16 @@ function colisorPowerup(){
     
     posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
   
-    const playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < 92 && posicaoPlayer > 15 && posicaoPlayer < 95) 
-    const playerEstaColidindoOnibus = (posicaoPowerUpOnibus < 92 && posicaoPlayer > 15 && posicaoPlayer < 95) 
-    const playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < 92 && posicaoPlayer > 15 && posicaoPlayer < 95) 
+    if(playerTemPowerUp){
+      playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < 92 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 15 && posicaoPlayer < 95);
+      playerEstaColidindoOnibus = (posicaoPowerUpOnibus < 92 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 15 && posicaoPlayer < 95);
+      playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < 92 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 15 && posicaoPlayer < 95);
+    }
+    else{
+      playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
+      playerEstaColidindoOnibus = (posicaoPowerUpOnibus < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
+      playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
+    }
 
     if(playerEstaColidindoBicicleta){
       bicicleta();

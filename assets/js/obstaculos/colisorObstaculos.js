@@ -1,4 +1,5 @@
 import { encerrarJogo } from "../encerrarJogo.js";
+import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
 import { playerTemOnibus } from "../powerUps/onibus.js";
 
 const player = document.querySelector(".player");
@@ -12,17 +13,27 @@ let posicaoPlayer, posicaoObstaculoUm, posicaoObstaculoDois;
 const arrayObstaculos = [obstaculoUm, obstaculoDois];
 let arrayPosicoesObstaculos = [posicaoObstaculoUm, posicaoObstaculoDois];
 
+let playerEstaColidindo
+
 function colisorObstaculos(){
     posicaoObstaculoUm = arrayObstaculos[0].offsetLeft;
     posicaoObstaculoDois = arrayObstaculos[1].offsetLeft;
     arrayPosicoesObstaculos = [posicaoObstaculoUm, posicaoObstaculoDois];
     posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
+
+    if(playerTemPowerUp){
+      playerEstaColidindo = 
+      (posicaoObstaculoUm < 92 && posicaoObstaculoUm > 39 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
+      (posicaoObstaculoDois < 92 && posicaoObstaculoDois > 39 && posicaoObstaculoDois > 0 && posicaoPlayer > 50)
+    }
+    else{
+      playerEstaColidindo = 
+      (posicaoObstaculoUm < 174 && posicaoObstaculoUm > 39 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
+      (posicaoObstaculoDois < 174 && posicaoObstaculoDois > 39 && posicaoObstaculoDois > 0 && posicaoPlayer > 60)
+    }
   
-    const playerEstaColidindo = 
-    (posicaoObstaculoUm < 92 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
-    (posicaoObstaculoDois < 92 && posicaoObstaculoDois > 0 && posicaoPlayer > 50)
     
-    if(playerEstaColidindo && playerTemOnibus == false){
+    if(playerEstaColidindo && playerTemOnibus == false && false == true){
       encerrarJogo()
     }
 }

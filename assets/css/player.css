@@ -11,7 +11,7 @@
 	/*animation: pula linear infinite 1s;*/
 }
 
-.playerWalking--2, .playerWalking--3, .playerWalking--4, .playerWalking--5{
+.sprite{
 	position: absolute;
 	display: none;
 	bottom: 0;
@@ -20,7 +20,12 @@
 	height: 100%;
 }
 
-.playerWalking--2{
+.carro{
+	width: 133px;
+	height: 40px;
+}
+
+.carro--1{
 	display: block;
 }
 
