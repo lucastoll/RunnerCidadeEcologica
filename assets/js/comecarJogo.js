@@ -9,6 +9,7 @@ import { removeEstilosBicicleta } from "./powerUps/bicicleta.js";
 import { removeEstilosCarroEletrico } from "./powerUps/carroEletrico.js";
 import { removeEstilosOnibus } from "./powerUps/onibus.js";
 import { limpaSprites } from "./player/sprites.js";
+import { removeEstilosCaminhada } from "./powerUps/caminhada.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -61,7 +62,7 @@ function comecarJogo(){
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
-  setTimeout(randomizerPowerups, 1);
+  setTimeout(randomizerPowerups, 10);
   setTimeout(randomizerObstaculos, 2000);
 }
 
@@ -73,6 +74,7 @@ function removeEstilosPowerup(){
   removeEstilosBicicleta();
   removeEstilosCarroEletrico();
   removeEstilosOnibus();
+  removeEstilosCaminhada();
 
   if(window.innerWidth < 1024){
     areaJogo.style.backgroundSize = "220% 100%"

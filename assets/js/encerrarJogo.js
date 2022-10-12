@@ -7,6 +7,7 @@ import { arrayPowerups, arrayPosicaoPowerups } from "./powerUps/colisorPowerups.
 import { timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus } from "./powerUps/onibus.js";
 import { timeoutRecursivoRandomizerPowerups } from "./powerUps/randomizerPowerups.js";
 import { timeoutRecursivoRandomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
+import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./powerUps/caminhada.js";
 
 export function encerrarJogo(){
     for(let i = 0; i < arrayObstaculos.length; i++) {
@@ -40,15 +41,24 @@ export function encerrarJogo(){
 }
 
 function limpaIntervalos(){
+    //bicicleta
     clearTimeout(timeoutAnimacaoPowerUpBicicleta);
     clearTimeout(timeoutFimPowerUpBicicleta);
+    //onibus
     clearTimeout(timeoutAnimacaoPowerUpOnibus);
     clearTimeout(timeoutFimPowerUpOnibus);
+    //carroEletrico
     clearTimeout(timeoutAnimacaoPowerUpCarroEletrico);
     clearTimeout(timeoutFimPowerUpCarroEletrico);
+    //caminhada
+    clearTimeout(timeoutAnimacaoPowerUpCaminhada);
+    clearTimeout(timeoutFimPowerUpCaminhada);
+    //randomizers
     clearTimeout(timeoutRecursivoRandomizerObstaculos);
     clearTimeout(timeoutRecursivoRandomizerPowerups);
+    //colisores
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);
+    //pontuacao
     clearInterval(intervaloPontuacao);
 }

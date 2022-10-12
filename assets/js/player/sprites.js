@@ -2,6 +2,7 @@ import { jogoEmExecucao } from "../comecarJogo.js";
 import { player } from "../obstaculos/colisorObstaculos.js";
 import { animacaoPowerupRodando, playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
 import { playerTemBicicleta } from "../powerUps/bicicleta.js";
+import { playerTemCaminhada } from "../powerUps/caminhada.js";
 import { playerTemCarroEletrico } from "../powerUps/carroEletrico.js";
 import { playerTemOnibus } from "../powerUps/onibus.js";
 
@@ -17,6 +18,9 @@ const loopSpritesPlayer = setInterval(() => {
             spritesPlayerAndando();
         }
         else if(playerTemCarroEletrico){
+            spritesPlayerAndando();
+        }
+        else if(playerTemCaminhada){
             spritesPlayerAndando();
         }
     }

@@ -5,25 +5,37 @@ import { getRandomInt } from "../auxiliares/getRandomInt.js";
 import { animacaoPowerupRodando } from "../powerUps/animacaoPowerup.js";
 import { playerTemBicicleta } from "../powerUps/bicicleta.js";
 import { playerTemCarroEletrico } from "../powerUps/carroEletrico.js";
+import { playerTemCaminhada } from "../powerUps/caminhada.js";
 
 let randomNumObstaculo = 0, i;
 let timeoutRecursivoRandomizerObstaculos;
 
 function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
-        randomNumObstaculo = getRandomInt(0, 2);
+        if(playerTemCaminhada){
+            randomNumObstaculo = 0;
+        }
+        else{
+            randomNumObstaculo = getRandomInt(0, 2);
+        }
         for(i=0; i<arrayObstaculos.length; i++){
             arrayObstaculos[i].style = "none";
         }
         /* DELAY PARA O CSS ENTENDER QUE A ANIMAÇÃO MUDOU */
-        if(playerTemCarroEletrico == false){
+
+        if(playerTemCaminhada){
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(timerObstaculos) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(2500) / 1000}s`;
+            }, 10);
+        }
+        else if(playerTemCarroEletrico){
+            setTimeout(() => {
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(3000) / 1000}s`;
             }, 10);
         }
         else{
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(2500) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(timerObstaculos) / 1000}s`;
             }, 10);
         }
         

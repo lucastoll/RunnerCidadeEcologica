@@ -1,4 +1,4 @@
-.powerUp--bicicleta, .powerUp--onibus, .powerUp--carroEletrico{
+.powerUp--bicicleta, .powerUp--onibus, .powerUp--carroEletrico, .powerUp--caminhada{
     align-items: center;
     border-radius: 100%;
     bottom: 65px;
@@ -13,7 +13,7 @@
     /* animation: powerUpKeyframe 5s infinite linear; */
 }
 
-.powerUp--bicicleta p, .powerUp--onibus p, .powerUp--carroEletrico p{
+.powerUp--bicicleta p, .powerUp--onibus p, .powerUp--carroEletrico p, .powerUp--caminhada p{
     margin: 0;
 }
 
@@ -47,6 +47,17 @@
 
 .powerUp--carroEletrico::after{
     content: 'carroEletrico';
+    position: absolute;
+    margin-bottom: 50px;
+}
+
+.powerUp--caminhada{
+    background-image: url(../img/powerUp/caminhada.png);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;}
+
+.powerUp--caminhada::after{
+    content: 'caminhada';
     position: absolute;
     margin-bottom: 50px;
 }
