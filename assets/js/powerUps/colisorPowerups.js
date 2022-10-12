@@ -1,3 +1,4 @@
+import { comprimentoPlayer, posicaoPlayerLeft } from "../player/movimentacao.js";
 import { playerTemPowerUp } from "./animacaoPowerup.js";
 import { bicicleta } from "./bicicleta.js";
 import { caminhada } from "./caminhada.js";
@@ -28,10 +29,10 @@ function colisorPowerup(){
     arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
   
 
-    playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
-    playerEstaColidindoOnibus = (posicaoPowerUpOnibus < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
-    playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < 174 && posicaoPowerUpBicicleta > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
-    playerEstaColidindoCaminhada = (posicaoPowerUpCaminhada  < 174 && posicaoPowerUpCaminhada > 39 && posicaoPlayer > 25 && posicaoPlayer < 95);
+    playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpBicicleta > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoOnibus = (posicaoPowerUpOnibus < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpOnibus > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCarroEletrico > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoCaminhada = (posicaoPowerUpCaminhada  < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCaminhada > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
 
     if(playerEstaColidindoBicicleta){
       bicicleta();
@@ -44,7 +45,7 @@ function colisorPowerup(){
     }
     else if(playerEstaColidindoCaminhada){
       caminhada();
-    }
+    }  
   }
   
 

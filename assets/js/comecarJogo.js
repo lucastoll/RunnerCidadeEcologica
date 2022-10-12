@@ -48,7 +48,7 @@ function comecarJogo(){
   areaJogo.style.animation = "backgroundCarro 1000s infinite";
   popUp.style.display = "none";
   player.classList.remove("pula");
-  player.style.bottom = '0px';
+  player.style = "";
   document.querySelector(".buttonPopUp").disabled = true;
 
   colocaNuvensSujasAoReiniciarJogo();

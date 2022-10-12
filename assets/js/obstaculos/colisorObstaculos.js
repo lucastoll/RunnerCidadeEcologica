@@ -1,4 +1,5 @@
 import { encerrarJogo } from "../encerrarJogo.js";
+import { comprimentoPlayer, posicaoPlayerLeft } from "../player/movimentacao.js";
 import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
 import { playerTemBicicleta } from "../powerUps/bicicleta.js";
 import { playerTemOnibus } from "../powerUps/onibus.js";
@@ -22,22 +23,9 @@ function colisorObstaculos(){
     arrayPosicoesObstaculos = [posicaoObstaculoUm, posicaoObstaculoDois];
     posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
 
-    if(playerTemBicicleta){
-      playerEstaColidindo =
-      (posicaoObstaculoUm < 105  && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
-      (posicaoObstaculoDois < 105  && posicaoObstaculoDois > 0 && posicaoPlayer > 40) 
-    }
-    else if(playerTemPowerUp){
-      playerEstaColidindo = 
-      (posicaoObstaculoUm < 92 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
-      (posicaoObstaculoDois < 92 && posicaoObstaculoDois > 0 && posicaoPlayer > 50)
-    }
-    else{
-      playerEstaColidindo = 
-      (posicaoObstaculoUm < 174 && posicaoObstaculoUm > 0 && posicaoPlayer < 50) ||
-      (posicaoObstaculoDois < 174 && posicaoObstaculoDois > 0 && posicaoPlayer > 60)
-    }
-  
+    playerEstaColidindo = 
+    (posicaoObstaculoUm < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoUm > (posicaoPlayerLeft - 50) && posicaoPlayer < 50) ||
+    (posicaoObstaculoDois < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoDois > (posicaoPlayerLeft - 50) && posicaoPlayer > 60)
     
     if(playerEstaColidindo && playerTemOnibus == false){
       encerrarJogo()

@@ -40,12 +40,14 @@ function addEstilosOnibus(){
     powerUpOnibus.style.animation = "none";
     powerUpOnibus.style.right = "-10%";
     areaJogo.style.background = "#008FF1";
+    player.classList.add("onibus");
 }
 
 function removeEstilosOnibus(){
     setPlayerTemPowerUp(false);
     playerTemOnibus = false;
     areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
+    player.classList.remove("onibus");
     document.querySelector("body").style.background = "#A1AAAA";
 }
 

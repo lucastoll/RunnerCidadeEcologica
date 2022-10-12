@@ -36,7 +36,6 @@
 
 .onibus{
 	animation: pisca 3s infinite;
-	background: #E6CC0E;
 	z-index: 2;
 }
 
