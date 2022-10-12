@@ -61,7 +61,7 @@ function comecarJogo(){
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
-  setTimeout(randomizerPowerups, 5000);
+  setTimeout(randomizerPowerups, 1);
   setTimeout(randomizerObstaculos, 2000);
 }
 

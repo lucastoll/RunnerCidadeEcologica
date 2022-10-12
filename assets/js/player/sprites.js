@@ -11,7 +11,7 @@ const loopSpritesPlayer = setInterval(() => {
             spritesPlayerCarro();
         }
         else if(playerTemBicicleta){
-            spritesPlayerAndando();
+            spritesPlayerBicicleta();
         }
         else if(playerTemOnibus){
             spritesPlayerAndando();
@@ -21,6 +21,36 @@ const loopSpritesPlayer = setInterval(() => {
         }
     }
 }, 250); 
+
+const spriteBicicleta1 = document.querySelector(".bicicleta--1");
+const spriteBicicleta2 = document.querySelector(".bicicleta--2");
+const spriteBicicleta3 = document.querySelector(".bicicleta--3");
+const spriteBicicleta4 = document.querySelector(".bicicleta--4");
+
+const arraySpriteBicicleta = [spriteBicicleta1, spriteBicicleta2, spriteBicicleta3, spriteBicicleta4];
+let spriteBicileta = 0;
+
+function spritesPlayerBicicleta(){
+    player.classList.add("bicicleta");
+    if(spriteBicileta == 4){
+        spriteBicileta = 0;
+    }
+    if(spriteBicileta == 0){
+        arraySpriteBicicleta[3].style.display = "none";
+    }
+    else{
+        arraySpriteBicicleta[spriteBicileta - 1].style.display = "none";
+    }
+    arraySpriteBicicleta[spriteBicileta++].style.display = "block";
+}
+
+function spritesPlayerOnibus(){
+
+}
+
+function spritesPlayerCarroEletrico(){
+
+}
 
 const spriteCarro1 = document.querySelector(".carro--1");
 const spriteCarro2 = document.querySelector(".carro--2");
@@ -42,30 +72,6 @@ function spritesPlayerCarro(){
         arraySpriteCarro[spriteCarro - 1].style.display = "none";
     }
     arraySpriteCarro[spriteCarro++].style.display = "block";
-}
-
-function spritesPlayerBicicleta(){
-
-}
-
-function spritesPlayerOnibus(){
-
-}
-
-function spritesPlayerCarroEletrico(){
-
-}
-
-function limpaSprites(){
-    player.classList.remove("carro");
-
-    playerWalking1.style.display = "none";
-    for(let i=0; i < arrayPlayerWalking.length; i++){
-        arrayPlayerWalking[i].style.display = "none"
-    }
-    for(let i=0; i < arraySpriteCarro.length; i++){
-        arraySpriteCarro[i].style.display = "none"
-    }
 }
 
 const playerWalking1 = document.querySelector(".playerWalking--1");
@@ -99,6 +105,22 @@ function spritesPlayerAndando(){
         playerWalking1.style.display = "block";
     }
 
+}
+
+function limpaSprites(){
+    player.classList.remove("carro");
+    player.classList.remove("bicicleta");
+
+    playerWalking1.style.display = "none";
+    for(let i=0; i < arrayPlayerWalking.length; i++){
+        arrayPlayerWalking[i].style.display = "none"
+    }
+    for(let i=0; i < arraySpriteCarro.length; i++){
+        arraySpriteCarro[i].style.display = "none"
+    }
+    for(let i=0; i < arraySpriteBicicleta.length; i++){
+        arraySpriteBicicleta[i].style.display = "none"
+    }
 }
 
 export { limpaSprites }

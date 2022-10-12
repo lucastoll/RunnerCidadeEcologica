@@ -12,8 +12,11 @@ body{
 	overflow: hidden;
     background: url(../img/cidadePoluidaBackground.jpg);
     background-size: 220% 100%;
+	background-position-y: 10px;
 	animation: backgroundCarro 1000s infinite;
 	z-index: -2;
+/* 	background-position-y: -60px !important;
+	background-repeat: repeat-x !important; */
 }
 
 @media screen and (min-width: 1024px) {
@@ -30,10 +33,10 @@ body{
 
 @keyframes backgroundCarro {
 	0%{
-		background-position: 0px;
+		background-position-x: 0px;
 	}
 	100%{
-		background-position: -100000px;
+		background-position-x: -100000px;
 	}
 }
 
