@@ -15,7 +15,7 @@ const loopSpritesPlayer = setInterval(() => {
             spritesPlayerBicicleta();
         }
         else if(playerTemOnibus){
-            spritesPlayerAndando();
+            spritesPlayerOnibus();
         }
         else if(playerTemCarroEletrico){
             spritesPlayerAndando();
@@ -48,8 +48,24 @@ function spritesPlayerBicicleta(){
     arraySpriteBicicleta[spriteBicileta++].style.display = "block";
 }
 
-function spritesPlayerOnibus(){
+const spriteOnibus1 = document.querySelector(".onibus--1");
+const spriteOnibus2 = document.querySelector(".onibus--2");
 
+const arraySpriteOnibus = [spriteOnibus1, spriteOnibus2];
+let spriteOnibus = 0;
+
+function spritesPlayerOnibus(){
+    player.classList.add("onibus");
+    if(spriteOnibus == 1){
+        spriteOnibus = 0;
+    }
+    if(spriteOnibus == 0){
+        arraySpriteOnibus[1].style.display = "none";
+    }
+    else{
+        arraySpriteOnibus[spriteOnibus - 1].style.display = "none";
+    }
+    arraySpriteOnibus[spriteOnibus++].style.display = "block";
 }
 
 function spritesPlayerCarroEletrico(){
@@ -124,6 +140,9 @@ function limpaSprites(){
     }
     for(let i=0; i < arraySpriteBicicleta.length; i++){
         arraySpriteBicicleta[i].style.display = "none"
+    }
+    for(let i=0; i < arraySpriteOnibus.length; i++){
+        arraySpriteOnibus[i].style.display = "none"
     }
 }
 

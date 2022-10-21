@@ -10,6 +10,7 @@ import { removeEstilosCarroEletrico } from "./powerUps/carroEletrico.js";
 import { removeEstilosOnibus } from "./powerUps/onibus.js";
 import { limpaSprites } from "./player/sprites.js";
 import { removeEstilosCaminhada } from "./powerUps/caminhada.js";
+import { posicaoPlayerLeft, setPosicaoPlayerLeft } from "./player/movimentacao.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -49,6 +50,7 @@ function comecarJogo(){
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style = "";
+  setPosicaoPlayerLeft(40);
   document.querySelector(".buttonPopUp").disabled = true;
 
   colocaNuvensSujasAoReiniciarJogo();
@@ -62,7 +64,7 @@ function comecarJogo(){
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
-  setTimeout(randomizerPowerups, 10);
+  //setTimeout(randomizerPowerups, 10);
   setTimeout(randomizerObstaculos, 2000);
 }
 

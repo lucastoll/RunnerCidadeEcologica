@@ -1,4 +1,4 @@
-import { popUp, player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
+import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
 import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
@@ -28,7 +28,7 @@ export function encerrarJogo(){
     areaJogo.style.animation = "none";
     areaJogo.style.backgroundPosition = backgroundPosition;
 
-    player.style.bottom = `${posicaoPlayer}px`;
+    player.style.bottom = `${posicaoPlayerBottom}px`;
     popUp.style.display = "flex";
     document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
 
@@ -62,3 +62,11 @@ function limpaIntervalos(){
     //pontuacao
     clearInterval(intervaloPontuacao);
 }
+
+
+  
+  document.addEventListener("visibilitychange", () => {
+    if(document.visibilityState === "hidden") {
+        encerrarJogo();
+    } 
+  });

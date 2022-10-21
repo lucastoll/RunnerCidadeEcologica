@@ -1,6 +1,6 @@
 
 import { animacaoNuvemLimpaParaNuvemPoluida, animacaoNuvemPoluidaParaNuvemLimpa } from "../nuvem/nuvens.js";
-import { player, posicaoPlayer, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
+import { player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
 import { randomizerObstaculos } from "../obstaculos/randomizerObstaculos.js";
 
 let animacaoPowerupRodando = false;
@@ -42,7 +42,7 @@ function travaAnimacoes(){
         arrayObstaculos[i].style.left = `${arrayPosicoesObstaculos[i]}px`
     }
     player.classList.remove("pula");
-    player.style.bottom = `${posicaoPlayer}px`;
+    player.style.bottom = `${posicaoPlayerBottom}px`;
 }
 
 function animacaoPisca(){

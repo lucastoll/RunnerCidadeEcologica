@@ -10,7 +10,7 @@ const obstaculoDois = document.querySelector(".placa");
 const popUp = document.querySelector(".containerPopUpRestart");
 
 /* Define a colisão e condição de parada */
-let posicaoPlayer, posicaoObstaculoUm, posicaoObstaculoDois;
+let posicaoPlayerBottom, posicaoObstaculoUm, posicaoObstaculoDois;
 
 const arrayObstaculos = [obstaculoUm, obstaculoDois];
 let arrayPosicoesObstaculos = [posicaoObstaculoUm, posicaoObstaculoDois];
@@ -21,15 +21,15 @@ function colisorObstaculos(){
     posicaoObstaculoUm = arrayObstaculos[0].offsetLeft;
     posicaoObstaculoDois = arrayObstaculos[1].offsetLeft;
     arrayPosicoesObstaculos = [posicaoObstaculoUm, posicaoObstaculoDois];
-    posicaoPlayer = window.getComputedStyle(player).bottom.replace("px", "");
+    posicaoPlayerBottom = window.getComputedStyle(player).bottom.replace("px", "");
 
     playerEstaColidindo = 
-    (posicaoObstaculoUm < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoUm > (posicaoPlayerLeft - 50) && posicaoPlayer < 50) ||
-    (posicaoObstaculoDois < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoDois > (posicaoPlayerLeft - 50) && posicaoPlayer > 60)
+    (posicaoObstaculoUm < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoUm > (posicaoPlayerLeft - 50) && posicaoPlayerBottom < 50 && posicaoObstaculoUm > 0) ||
+    (posicaoObstaculoDois < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoDois > (posicaoPlayerLeft - 50) && posicaoPlayerBottom > 60 && posicaoObstaculoUm > 0)
     
     if(playerEstaColidindo && playerTemOnibus == false){
       encerrarJogo()
     }
 }
 
-export {player, posicaoPlayer, obstaculoUm, posicaoObstaculoUm, obstaculoDois, posicaoObstaculoDois, arrayObstaculos, arrayPosicoesObstaculos, colisorObstaculos, popUp};
+export {player, posicaoPlayerBottom, obstaculoUm, posicaoObstaculoUm, obstaculoDois, posicaoObstaculoDois, arrayObstaculos, arrayPosicoesObstaculos, colisorObstaculos, popUp};

@@ -58,4 +58,8 @@ function moveDireita(){
      }
 }
 
-export { posicaoPlayerLeft, comprimentoPlayer };
+function setPosicaoPlayerLeft(value){
+    posicaoPlayerLeft = value;
+}
+
+export { posicaoPlayerLeft, comprimentoPlayer, setPosicaoPlayerLeft };
