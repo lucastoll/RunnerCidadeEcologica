@@ -27,7 +27,7 @@ function colisorObstaculos(){
     (posicaoObstaculoUm < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoUm > (posicaoPlayerLeft - 50) && posicaoPlayerBottom < 50 && posicaoObstaculoUm > 0) ||
     (posicaoObstaculoDois < (posicaoPlayerLeft + comprimentoPlayer) && posicaoObstaculoDois > (posicaoPlayerLeft - 50) && posicaoPlayerBottom > 60 && posicaoObstaculoUm > 0)
     
-    if(playerEstaColidindo && playerTemOnibus == false){
+    if(playerEstaColidindo && playerTemOnibus == false && false == true){
       encerrarJogo()
     }
 }

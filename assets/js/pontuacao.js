@@ -1,21 +1,22 @@
 import { playerTemPowerUp } from "./powerUps/animacaoPowerup.js";
 
 const pontuacao = document.querySelector('.pontuacao');
-let ponto=0;
+let ponto=0, pontoTimerObstaculo=0;
 let timerObstaculos = 2000;
 
 function Marcaponto(){
     if(playerTemPowerUp == true){
         ponto = ponto + 2;
+        pontoTimerObstaculo = pontoTimerObstaculo + 2;
     }
     else{
         if(timerObstaculos > 1500){
-            timerObstaculos = Math.floor(-10 * ponto + 2010);
+            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 2010);
         }
+        pontoTimerObstaculo++;
         ponto++;
     }
     pontuacao.innerHTML=`Score: ${ponto}`;
-
 }
 
 function ResetaPontos(){
@@ -27,4 +28,8 @@ function setTimerObstaculos(value){
     timerObstaculos = value;
 }
 
-export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto};
+function setPonto(value){
+    ponto = value;
+}
+
+export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto, setPonto};

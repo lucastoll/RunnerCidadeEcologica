@@ -22,14 +22,12 @@ const controller = {
 document.addEventListener("keydown", (e) => {
     if(controller[e.keyCode]){
         controller[e.keyCode].pressed = true
-        console.log(e.keyCode, controller[e.keyCode].pressed)
     }
 })
 
 document.addEventListener("keyup", (e) => {
     if(controller[e.keyCode]){
       controller[e.keyCode].pressed = false
-      console.log(e.keyCode, controller[e.keyCode].pressed)
     }
 })
 

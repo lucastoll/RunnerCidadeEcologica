@@ -11,6 +11,9 @@ import { removeEstilosOnibus } from "./powerUps/onibus.js";
 import { limpaSprites } from "./player/sprites.js";
 import { removeEstilosCaminhada } from "./powerUps/caminhada.js";
 import { posicaoPlayerLeft, setPosicaoPlayerLeft } from "./player/movimentacao.js";
+import { colisorPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
+import { getRandomInt } from "./auxiliares/getRandomInt.js";
+import { randomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -20,7 +23,7 @@ const menu = document.querySelector(".menu");
 const areaJogo = document.querySelector(".areajogo1");
 
 var jogoEmExecucao = false;
-let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao;
+let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao;
 
 /* Ações botão do menu e botão de restart */
 
@@ -61,11 +64,13 @@ function comecarJogo(){
   ResetaPontos();
 
   intervaloChecarColisaoObstaculo = setInterval(colisorObstaculos, 10);
+  intervaloChecarColisaoPontosExtras = setInterval(colisorPontosExtras, 10)
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
 
-  //setTimeout(randomizerPowerups, 10);
+  setTimeout(randomizerPowerups, 10);
   setTimeout(randomizerObstaculos, 2000);
+  setTimeout(randomizerPontosExtras, 1);
 }
 
 function setJogoEmExecucao(value) {

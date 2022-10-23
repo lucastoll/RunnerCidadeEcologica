@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -63,10 +63,8 @@ function limpaIntervalos(){
     clearInterval(intervaloPontuacao);
 }
 
-
-  
   document.addEventListener("visibilitychange", () => {
-    if(document.visibilityState === "hidden") {
+    if(document.visibilityState === "hidden" && jogoEmExecucao == true) {
         encerrarJogo();
     } 
   });

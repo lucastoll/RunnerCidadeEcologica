@@ -29,10 +29,10 @@ function colisorPowerup(){
     arrayPosicaoPowerups = [posicaoPowerUpBicicleta, posicaoPowerUpOnibus, posicaoPowerUpCarroEletrico];
   
 
-    playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpBicicleta > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
-    playerEstaColidindoOnibus = (posicaoPowerUpOnibus < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpOnibus > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
-    playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCarroEletrico > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
-    playerEstaColidindoCaminhada = (posicaoPowerUpCaminhada  < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCaminhada > (posicaoPlayerLeft - 40) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoBicicleta = (posicaoPowerUpBicicleta < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpBicicleta > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoOnibus = (posicaoPowerUpOnibus < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpOnibus > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCarroEletrico > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
+    playerEstaColidindoCaminhada = (posicaoPowerUpCaminhada  < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCaminhada > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
 
     if(playerEstaColidindoBicicleta){
       bicicleta();
