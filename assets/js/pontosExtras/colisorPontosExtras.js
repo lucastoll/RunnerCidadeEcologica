@@ -4,6 +4,9 @@ import { estrela } from "./estrela.js";
 import { sustentabilidade } from "./sustentabilidade.js";
 import { cereja } from "./cereja.js";
 import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
+import { playerTemOnibus } from "../powerUps/onibus.js";
+import { playerTemBicicleta } from "../powerUps/bicicleta.js";
+import { playerTemCaminhada } from "../powerUps/caminhada.js";
 
 /* Define a colisão e condição de parada */
 
@@ -27,6 +30,15 @@ function colisorPontosExtras(){
     if(!playerTemPowerUp){
         playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 95);
     }
+    else if(playerTemOnibus){
+        playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 70);
+    }
+    else if(playerTemBicicleta){
+        playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 80);
+    }
+    else if(playerTemCaminhada){
+        playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 90);
+    }
     playerEstaColidindoSustentabilidade = (posicaoSustentabilidade < (posicaoPlayerLeft + comprimentoPlayer) && posicaoSustentabilidade > (posicaoPlayerLeft - 40) && posicaoPlayerBottom < 120 && posicaoPlayerBottom > 30);
     playerEstaColidindoCereja = (posicaoCereja < (posicaoPlayerLeft + comprimentoPlayer) && posicaoCereja > (posicaoPlayerLeft - 40) && posicaoPlayerBottom < 40);
     //console.log("posicaoPlayerLeft =" + posicaoPlayerLeft);
@@ -45,5 +57,5 @@ function colisorPontosExtras(){
 }
 
 
-export { colisorPontosExtras, arrayPontosExtras, estrelaPontoExtra, sustentabilidadePontoExtra, cerejaPontoExtra }
+export { colisorPontosExtras, arrayPontosExtras, arrayPosicoesPontosExtras, estrelaPontoExtra, sustentabilidadePontoExtra, cerejaPontoExtra }
 

@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -8,6 +8,8 @@ import { timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus } from "./powerUp
 import { timeoutRecursivoRandomizerPowerups } from "./powerUps/randomizerPowerups.js";
 import { timeoutRecursivoRandomizerObstaculos } from "./obstaculos/randomizerObstaculos.js";
 import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./powerUps/caminhada.js";
+import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
+import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 
 export function encerrarJogo(){
     for(let i = 0; i < arrayObstaculos.length; i++) {
@@ -18,10 +20,13 @@ export function encerrarJogo(){
         arrayPowerups[i].style.animation = "none";
         arrayPowerups[i].style.left = `${arrayPosicaoPowerups[i]}px`;
     }
+    for(let i = 0; i < arrayPontosExtras.length; i++) {
+        arrayPontosExtras[i].style.animation = "none";
+        arrayPontosExtras[i].style.left = `${arrayPosicoesPontosExtras[i]}px`;
+    }
 
     player.style.animation = "none";
     player.classList.remove("pula");
-
 
     let backgroundPosition = window.getComputedStyle(areaJogo).backgroundPosition;
     
@@ -56,9 +61,11 @@ function limpaIntervalos(){
     //randomizers
     clearTimeout(timeoutRecursivoRandomizerObstaculos);
     clearTimeout(timeoutRecursivoRandomizerPowerups);
+    clearTimeout(timeoutRecursivoRandomizerPontosExtras);
     //colisores
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);
+    clearInterval(intervaloChecarColisaoPontosExtras);
     //pontuacao
     clearInterval(intervaloPontuacao);
 }
