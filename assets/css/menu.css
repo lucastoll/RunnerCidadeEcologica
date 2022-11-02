@@ -1,25 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@500&display=swap');
+
 .menu{
 	width: 100vw;
 	height: 100vh;
-	background: #708090;
+	background: url("../img/menu/inicio_background.png");
+	background-size: 100% 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-end;
+	justify-content: flex-start;
+	position: relative;
 	gap: 16px;
+	overflow: hidden;
 }
 
 .menu h1{
 	margin: 0;
 }
 
-.menu button{
-	width: 100px;
-	height: 50px;
-}
-
 .menu button:hover{
 	background: pink;
 }
 
+.menu__items{
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 32px;
+	margin-right: 32px;
+	gap: 32px;
+}
+
+.menu__items img{
+	width: 100%;
+}
+
+.menu__items button{
+	width: 100%;
+}
+
+.buttonMenu{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #0076F7;
+	border: 4px solid #000000;
+	color: #FFE578;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	position: relative;
+	z-index: 1;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 24px;
+	word-spacing: -17px;	
+}
+
+.containerPopUpCreditos{
+	width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: none;
+	position: fixed;
+    justify-content: center;
+    align-items: center;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.popUpCreditos{
+    width: 80%;
+    max-width: 700px;
+    height: fit-content;
+    display: flex;
+    animation: modal .6s;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0076F7;
+    border-radius: 16px;
+    color: #FFE578;
+    font-family: 'Press Start 2P', cursive;
+    border: 5px solid black;
+	padding: 40px 20px;
+}
+
+.popUpCreditos p{
+	text-align: center;
+}
+
+.popUpCreditos h2{
+	margin: 0;
+	font-size: 32px;
+}
+
+.popUpCreditos h3{
+	font-size: 16px;
+	text-align: left;
+}
+
+.popUpCreditos a{
+	text-decoration: underline;
+	color: #FFE578;
+}
 

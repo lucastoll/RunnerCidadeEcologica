@@ -21,8 +21,26 @@
 </head>
 <body>
     <div class="menu">
-        <h1>Nome do jogo</h1>
-        <button class="buttonStart buttonMenu">Start</button>
+        <div class="menu__items">
+            <img class="menu__logo" src="./assets/img/menu/LogoGamer.png" alt="">
+            <div class="buttonStart buttonMenu">Começar jogo</div>
+            <div class="buttonMenu buttonCreditos">Créditos</div>
+        </div>
+    </div>
+    <div class="containerPopUpCreditos">
+        <div class="popUpCreditos">
+            <h2>Créditos</h2>
+            <p>Este projeto foi possível graças aos seguintes colaboradores</p>
+            <h3>João Matheus de Jesus Mendes</h3>
+            <h3>Kauan da Silva Vieira</h3>
+            <h3>Lucas Fernandes Tolotto</h3>
+            <h3>Luiz Pereira Reis</h3>
+            <h3>Matheus Parizotto Martins</h3>
+            <h3>Pedro Todineyb Santos</h3>
+            <h3>Rafael Ramos do Rosário</h3>
+            <p>Repositório do projeto</p>
+            <a id="popUpCreditosLink" target="_blank" href="https://github.com/lucastoll/runnerUPX">ghub.com/lucastoll/runnerUPX</a>
+        </div>
     </div>
     <div class="areajogo1" style="background-position-y: -60px;">
         <div class="testeHitbox" style="height: 50px; width: 50px; position: absolute; background: blue;">
@@ -195,4 +213,5 @@
 <script type="module" src="./assets/js/nuvem/nuvens.js"></script>
 <script type="module" src="./assets/js/pontosExtras/colisorPontosExtras.js"></script>
 <script type="module" src="./assets/js/formulario/formulario.js"></script>
+<script src="./assets/js/menu/creditos.js"></script>
 
