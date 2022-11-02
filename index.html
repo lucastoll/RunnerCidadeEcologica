@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/player.css">
     <link rel="stylesheet" href="./assets/css/nuvens.css">
     <link rel="stylesheet" href="./assets/css/pontosExtras.css">
+    <link rel="stylesheet" href="./assets/css/feedback.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -129,7 +130,55 @@
             <h2 class="popUpTitle">Game over!!</h2>
             <span class="popUpScorePlaceholder">Score: 0</span>
             <button class="buttonStart buttonPopUp" disabled>Restart</button>
+            <a class="mostrarPopUpFeedback">Feedback</a>
         </div>
+            <div class="feedbackPopUp">
+                <h2>Responda algumas perguntas para ajudar com a validação do nosso projeto :)</h2>
+                <form id="my-form" style="margin-top: 20px" action="https://formspree.io/f/xzbwkklg" method="POST">
+                    <!-- Question1 -->
+                    <label for="question1"><span>1.</span> Qual o melhor de tipo de meio de transporte</label>
+                    <div class="feedbackPopUp__questionRadio">
+                        <input type="radio" checked id="CarroNormal" name="meioDeTransporteFavorito" value="Carro Normal">
+                        <label for="Carro">Carro normal</label>
+                        <input type="radio" id="Onibus" name="meioDeTransporteFavorito" value="Onibus">
+                        <label for="Onibus">Onibus</label>
+                        <input type="radio" id="Bicicleta" name="meioDeTransporteFavorito" value="Bicicleta">
+                        <label for="Bicicleta">Bicicleta</label>
+                        <input type="radio" id="Caminhada" name="meioDeTransporteFavorito" value="Caminhada">
+                        <label for="Caminhada">Caminhada</label>
+                        <input type="radio" id="CarroEletrico" name="meioDeTransporteFavorito" value="CarroEletrico">
+                        <label for="CarroEletrico">Carro elétrico</label>
+                    </div>
+                    <!-- Question 2 -->
+                    <label for="question2"><span>2.</span> Em uma escala de 0 a 10, quão bem os diferentes veiculos funcionaram:</label>
+                    <div class="range">
+                        <input type="range" name="Veiculos" min="0" max="10" value="5" class="slider-color" id="question2">               
+                    </div>
+                    <!-- Question 3 -->
+                    <label for="question3"><span>3.</span> Em uma escala de 0 a 10, quão bem o sistema de pontos extras funcionou:</label>
+                    <div class="range">
+                        <input type="range" name="pontosExtras" min="0" max="10" value="5" class="slider-color" id="question3">               
+                    </div>
+                    <!-- Question 4 -->
+                    <label for="question4"><span>4.</span> Em uma escala de 0 a 10, como você classificaria a jogabilidade do jogo:</label>
+                    <div class="range">
+                        <input type="range" name="Jogabilidade" min="0" max="10" value="5" class="slider-color" id="question4">               
+                    </div>
+                    <!-- Question1 -->
+                    <label for="question5"><span>5.</span> Você encontrou bugs no jogo?</label>
+                    <div class="feedbackPopUp__questionRadio">
+                        <input type="radio" checked id="Nenhum" name="bugs" value="Nenhum">
+                        <label for="Nenhum">Nenhum</label>
+                        <input type="radio" id="Poucos" name="bugs" value="Poucos">
+                        <label for="Poucos">Poucos</label>
+                        <input type="radio" id="Muitos" name="bugs" value="Muitos">
+                        <label for="Muitos">Muitos</label>
+                        <input type="radio" id="Não sei responder" name="bugs" value="Não sei responder">
+                        <label for="Não sei responder">Não sei responder</label>
+                    </div>
+                    <button style="margin-top: 20px" class="buttonPopUp" type="submit">Enviar</button>
+                </form>
+            </div>
     </div>
 </body>
 </html>
@@ -145,4 +194,5 @@
 <script type="module" src="./assets/js/powerUps/randomizerPowerups.js"></script>
 <script type="module" src="./assets/js/nuvem/nuvens.js"></script>
 <script type="module" src="./assets/js/pontosExtras/colisorPontosExtras.js"></script>
+<script type="module" src="./assets/js/formulario/formulario.js"></script>
 

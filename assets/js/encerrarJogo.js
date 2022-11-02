@@ -10,6 +10,7 @@ import { timeoutRecursivoRandomizerObstaculos } from "./obstaculos/randomizerObs
 import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./powerUps/caminhada.js";
 import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
+import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
 
 export function encerrarJogo(){
     if(jogoEmExecucao){
@@ -37,6 +38,7 @@ export function encerrarJogo(){
     
         player.style.bottom = `${posicaoPlayerBottom}px`;
         popUp.style.display = "flex";
+        botaoMostrarPopUpFeedback.style.display = "block";
         document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
     
         setJogoEmExecucao(false);

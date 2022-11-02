@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.mostrarPopUpFeedback{
+    text-decoration: underline;
+}
+
+.feedbackPopUp{
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    height: fit-content;
+    max-width: 700px;
+    display: none;
+    animation: modal .6s;
+    flex-direction: column;
+    align-items: center;
+    background: #52a555;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    border: 2px dashed white;
+    padding: 20px 10px;
+}
+
+.feedbackPopUp h2{
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    margin-top: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.feedbackPopUp label{
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.feedbackPopUp label span{
+    color: black;
+}
+
+.slider-color {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 10px;
+    border-radius: 16px;
+    background: white;
+    outline: none;
+    opacity:0.9;
+    -webkit-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+  }
+  .slider-color:hover {
+    opacity:1;
+  }
+  .slider-color::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+  .slider-color::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+
+  .feedbackPopUp__questionRadio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feedbackPopUp__questionRadio label{
+    margin: 0;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
