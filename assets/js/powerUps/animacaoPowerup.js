@@ -2,6 +2,7 @@
 import { animacaoNuvemLimpaParaNuvemPoluida, animacaoNuvemPoluidaParaNuvemLimpa } from "../nuvem/nuvens.js";
 import { player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
 import { randomizerObstaculos } from "../obstaculos/randomizerObstaculos.js";
+import { setPosicaoPlayerLeft } from "../player/movimentacao.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;
@@ -24,6 +25,7 @@ function animacaoPowerUp(statusPowerUp){
             arrayObstaculos[i].style.left = "auto";
             arrayObstaculos[i].style.right = "-20%";
         }
+        setPosicaoPlayerLeft(40);
         player.style.bottom = "0px";
         player.style = "";
 

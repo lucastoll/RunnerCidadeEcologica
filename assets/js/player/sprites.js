@@ -18,7 +18,7 @@ const loopSpritesPlayer = setInterval(() => {
             spritesPlayerOnibus();
         }
         else if(playerTemCarroEletrico){
-            spritesPlayerAndando();
+            spritesPlayerCarroEletrico();
         }
         else if(playerTemCaminhada){
             spritesPlayerAndando();
@@ -68,8 +68,24 @@ function spritesPlayerOnibus(){
     arraySpriteOnibus[spriteOnibus++].style.display = "block";
 }
 
-function spritesPlayerCarroEletrico(){
+const spriteCarroEletrico1 = document.querySelector(".carroEletrico--1");
+const spriteCarroEletrico2 = document.querySelector(".carroEletrico--2");
+const spriteCarroEletrico3 = document.querySelector(".carroEletrico--3");
+const arraySpriteCarroEletrico = [spriteCarroEletrico1, spriteCarroEletrico2, spriteCarroEletrico3];
+let spriteCarroEletrico = 0;
 
+function spritesPlayerCarroEletrico(){
+    player.classList.add("carro");
+    if(spriteCarroEletrico == 3){
+        spriteCarroEletrico = 0;
+    }
+    if(spriteCarroEletrico == 0){
+        arraySpriteCarroEletrico[2].style.display = "none";
+    }
+    else{
+        arraySpriteCarroEletrico[spriteCarroEletrico - 1].style.display = "none";
+    }
+    arraySpriteCarroEletrico[spriteCarroEletrico++].style.display = "block";
 }
 
 const spriteCarro1 = document.querySelector(".carro--1");
@@ -130,6 +146,7 @@ function spritesPlayerAndando(){
 function limpaSprites(){
     player.classList.remove("carro");
     player.classList.remove("bicicleta");
+    player.classList.remove("onibus");
 
     playerWalking1.style.display = "none";
     for(let i=0; i < arrayPlayerWalking.length; i++){
@@ -137,6 +154,9 @@ function limpaSprites(){
     }
     for(let i=0; i < arraySpriteCarro.length; i++){
         arraySpriteCarro[i].style.display = "none"
+    }
+    for(let i=0; i < arraySpriteCarroEletrico.length; i++){
+        arraySpriteCarroEletrico[i].style.display = "none"
     }
     for(let i=0; i < arraySpriteBicicleta.length; i++){
         arraySpriteBicicleta[i].style.display = "none"

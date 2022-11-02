@@ -25,10 +25,11 @@ function colisorPontosExtras(){
     arrayPosicoesPontosExtras = [posicaoEstrela, posicaoSustentabilidade, posicaoCereja];    
 
     if(!playerTemPowerUp){
-        playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 95);
     }
+    playerEstaColidindoEstrela = (posicaoEstrela < (posicaoPlayerLeft + comprimentoPlayer) && posicaoEstrela > (posicaoPlayerLeft - 40) && posicaoPlayerBottom > 95);
     playerEstaColidindoSustentabilidade = (posicaoSustentabilidade < (posicaoPlayerLeft + comprimentoPlayer) && posicaoSustentabilidade > (posicaoPlayerLeft - 40) && posicaoPlayerBottom < 120 && posicaoPlayerBottom > 30);
     playerEstaColidindoCereja = (posicaoCereja < (posicaoPlayerLeft + comprimentoPlayer) && posicaoCereja > (posicaoPlayerLeft - 40) && posicaoPlayerBottom < 40);
+    
     //console.log("posicaoPlayerLeft =" + posicaoPlayerLeft);
     //console.log("posicaoPlayerLeft =" + posicaoPlayerLeft);
     //console.log("posicaoCereja =" + posicaoCereja);
