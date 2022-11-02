@@ -94,5 +94,5 @@ function removeEstilosPowerup(){
   }
 }
 
-export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo};
+export {setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
 
