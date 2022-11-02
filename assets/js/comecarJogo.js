@@ -11,7 +11,7 @@ import { removeEstilosOnibus } from "./powerUps/onibus.js";
 import { limpaSprites } from "./player/sprites.js";
 import { removeEstilosCaminhada } from "./powerUps/caminhada.js";
 import { posicaoPlayerLeft, setPosicaoPlayerLeft } from "./player/movimentacao.js";
-import { colisorPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
+import { arrayPontosExtras, colisorPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { getRandomInt } from "./auxiliares/getRandomInt.js";
 import { randomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 
@@ -47,6 +47,10 @@ function comecarJogo(){
   for(let i = 0; i < arrayPowerups.length; i++) {
     arrayPowerups[i].style.left = "auto";
     arrayPowerups[i].style.right = `-20%`;
+  }
+  for(let i = 0; i < arrayPontosExtras.length; i++) {
+    arrayPontosExtras[i].style.left = "auto";
+    arrayPontosExtras[i].style.right = `-20%`;
   }
 
   areaJogo.style.animation = "backgroundCarro 1000s infinite";
