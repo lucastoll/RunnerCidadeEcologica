@@ -1,4 +1,4 @@
-.sacoDeLixo01, .pomba{
+.sacoDeLixo01, .sacoDeLixo02, .cone, .hidrante, .rato, .pomba{
 	position: absolute;
 	bottom: 0px;
 	width: 50px;
@@ -10,6 +10,12 @@
 	bottom: 100px;
 }
 
+.hidrante img{
+	bottom: 10px;
+	position: absolute;
+	transform: scale(1.5);
+	
+}
 
 /*Animação do primeiro obstaculo*/
 @keyframes carroparado {

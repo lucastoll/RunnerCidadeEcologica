@@ -36,34 +36,34 @@ const spriteCereja04 = document.querySelector(".pontosExtras--cereja04");
 
 let contadorSpriteCereja = 0;
 
-const loopSpritesCereja = setInterval(() => {
+function spritesCereja(){
     if(jogoEmExecucao && randomNumPontosExtras == 2){
-       if(contadorSpriteCereja == 0){
-        spriteCereja03.style.display = "none"
-        spriteCereja00.style.display = "block";
-        contadorSpriteCereja++;
-       }
-       else if(contadorSpriteCereja == 1){
-        spriteCereja00.style.display = "none"
-        spriteCereja01.style.display = "block";
-        contadorSpriteCereja++;
-       }
-       else if(contadorSpriteCereja == 2){
-        spriteCereja01.style.display = "none"
-        spriteCereja02.style.display = "block";
-        contadorSpriteCereja++;
-       }
-       else if(contadorSpriteCereja == 3){
-        spriteCereja02.style.display = "none"
-        spriteCereja03.style.display = "block";
-        contadorSpriteCereja++;
-       }
-       else if(contadorSpriteCereja == 4){
-        spriteCereja03.style.display = "none"
-        spriteCereja04.style.display = "block";
-        contadorSpriteCereja = 0
-       }   
-    }
-}, 200); 
+        if(contadorSpriteCereja == 0){
+         spriteCereja04.style.display = "none"
+         spriteCereja00.style.display = "block";
+         contadorSpriteCereja++;
+        }
+        else if(contadorSpriteCereja == 1){
+         spriteCereja00.style.display = "none"
+         spriteCereja01.style.display = "block";
+         contadorSpriteCereja++;
+        }
+        else if(contadorSpriteCereja == 2){
+         spriteCereja01.style.display = "none"
+         spriteCereja02.style.display = "block";
+         contadorSpriteCereja++;
+        }
+        else if(contadorSpriteCereja == 3){
+         spriteCereja02.style.display = "none"
+         spriteCereja03.style.display = "block";
+         contadorSpriteCereja++;
+        }
+        else if(contadorSpriteCereja == 4){
+         spriteCereja03.style.display = "none"
+         spriteCereja04.style.display = "block";
+         contadorSpriteCereja = 0
+        }   
+     }
+}
 
-export { cereja, loopSpritesCereja }
+export { cereja, spritesCereja }

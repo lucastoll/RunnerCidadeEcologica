@@ -61,51 +61,49 @@ const spriteCarroEletrico07 = document.querySelector(".powerUp--carroEletrico07"
 
 let contadorSpriteCarroEletrico = 0;
 
-console.log(spriteCarroEletrico00)
-
-const loopSpritesCarroEletrico = setInterval(() => {
-    if(jogoEmExecucao && randomNumPowerup == 2){
-       if(contadorSpriteCarroEletrico == 0){
-        spriteCarroEletrico07.style.display = "none"
-        spriteCarroEletrico00.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       }
-       else if(contadorSpriteCarroEletrico == 1){
-        spriteCarroEletrico00.style.display = "none"
-        spriteCarroEletrico01.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       } 
-       else if(contadorSpriteCarroEletrico == 2){
-        spriteCarroEletrico01.style.display = "none"
-        spriteCarroEletrico02.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       } 
-       else if(contadorSpriteCarroEletrico == 3){
-        spriteCarroEletrico02.style.display = "none"
-        spriteCarroEletrico03.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       } 
-       else if(contadorSpriteCarroEletrico == 4){
-        spriteCarroEletrico03.style.display = "none"
-        spriteCarroEletrico04.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       }
-       else if(contadorSpriteCarroEletrico == 5){
-        spriteCarroEletrico04.style.display = "none"
-        spriteCarroEletrico05.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       }  
-       else if(contadorSpriteCarroEletrico == 6){
-        spriteCarroEletrico05.style.display = "none"
-        spriteCarroEletrico06.style.display = "block";
-        contadorSpriteCarroEletrico++;
-       }
-       else if(contadorSpriteCarroEletrico == 7){
-        spriteCarroEletrico06.style.display = "none"
-        spriteCarroEletrico07.style.display = "block";
-        contadorSpriteCarroEletrico = 0;
-       }
+function spritesPowerUpCarroEletrico(){
+  if(jogoEmExecucao && randomNumPowerup == 2){
+    if(contadorSpriteCarroEletrico == 0){
+     spriteCarroEletrico07.style.display = "none"
+     spriteCarroEletrico00.style.display = "block";
+     contadorSpriteCarroEletrico++;
     }
-}, 200); 
+    else if(contadorSpriteCarroEletrico == 1){
+     spriteCarroEletrico00.style.display = "none"
+     spriteCarroEletrico01.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    } 
+    else if(contadorSpriteCarroEletrico == 2){
+     spriteCarroEletrico01.style.display = "none"
+     spriteCarroEletrico02.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    } 
+    else if(contadorSpriteCarroEletrico == 3){
+     spriteCarroEletrico02.style.display = "none"
+     spriteCarroEletrico03.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    } 
+    else if(contadorSpriteCarroEletrico == 4){
+     spriteCarroEletrico03.style.display = "none"
+     spriteCarroEletrico04.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    }
+    else if(contadorSpriteCarroEletrico == 5){
+     spriteCarroEletrico04.style.display = "none"
+     spriteCarroEletrico05.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    }  
+    else if(contadorSpriteCarroEletrico == 6){
+     spriteCarroEletrico05.style.display = "none"
+     spriteCarroEletrico06.style.display = "block";
+     contadorSpriteCarroEletrico++;
+    }
+    else if(contadorSpriteCarroEletrico == 7){
+     spriteCarroEletrico06.style.display = "none"
+     spriteCarroEletrico07.style.display = "block";
+     contadorSpriteCarroEletrico = 0;
+    }
+ }
+}
 
-export { loopSpritesCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico }
+export { spritesPowerUpCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico }

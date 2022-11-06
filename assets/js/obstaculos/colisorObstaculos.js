@@ -5,13 +5,17 @@ import { randomNumObstaculo } from "./randomizerObstaculos.js";
 
 const player = document.querySelector(".player");
 const sacoDeLixo = document.querySelector(".sacoDeLixo01");
+const sacoDeLixo2 = document.querySelector(".sacoDeLixo02");
+const hidrante = document.querySelector(".hidrante");
+const cone = document.querySelector(".cone");
 const pomba = document.querySelector(".pomba");
+const rato = document.querySelector(".rato");
 const popUp = document.querySelector(".containerPopUpRestart");
 
 /* Define a colisão e condição de parada */
 let posicaoPlayerBottom, arrayPosicoesObstaculos;
 
-const arrayObstaculos = [sacoDeLixo, pomba];
+const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba];
 
 let playerEstaColidindo
 
@@ -24,18 +28,19 @@ function colisorObstaculos(){
 
     posicaoPlayerBottom = window.getComputedStyle(player).bottom.replace("px", "");
 
-    if(randomNumObstaculo == 1){ // Obstaculos terrestres
+    if(randomNumObstaculo < 5){ // Obstaculos terrestres
       playerEstaColidindo = 
-      (arrayObstaculos[randomNumObstaculo] < (posicaoPlayerLeft + comprimentoPlayer) 
-      && arrayObstaculos[randomNumObstaculo] > (posicaoPlayerLeft - 50) 
-      && posicaoPlayerBottom < 50 && arrayObstaculos[randomNumObstaculo] > 0);
+      (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer) 
+      && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
+      && posicaoPlayerBottom < 50);
     }
-    else if(randomNumObstaculo == 2){ // Obstaculos aereos
+    else if(randomNumObstaculo == 5){ // Obstaculos aereos
       playerEstaColidindo = 
       (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer) 
       && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
       && posicaoPlayerBottom > 60);
     }
+
     //&& posicaoObstaculoUm > 0
 
     if(playerEstaColidindo && playerTemOnibus == false){

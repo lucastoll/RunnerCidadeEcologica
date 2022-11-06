@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCarroEletrico, loopSpritesCereja } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -11,7 +11,6 @@ import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./p
 import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
-import { loopSpritesCereja } from "./pontosExtras/cereja.js";
 
 export function encerrarJogo(){
     if(jogoEmExecucao){
@@ -70,6 +69,10 @@ function limpaIntervalos(){
     clearTimeout(timeoutRecursivoRandomizerPontosExtras);
     //cereja animacao
     clearInterval(loopSpritesCereja);
+    //power up carro eletrico animação;
+    clearInterval(loopSpritesCarroEletrico);
+    //sprite pomba
+    clearInterval(loopSpritesPomba);
     //colisores
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);

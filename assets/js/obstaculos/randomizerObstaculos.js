@@ -16,7 +16,10 @@ function randomizerObstaculos(){
             randomNumObstaculo = 0;
         }
         else{
-            randomNumObstaculo = getRandomInt(0, 2);
+            randomNumObstaculo = getRandomInt(0, 6);
+            randomNumObstaculo = 5;
+            console.log(randomNumObstaculo)
+            //randomNumObstaculo == 0;
         }
         for(i=0; i<arrayObstaculos.length; i++){
             arrayObstaculos[i].style = "none";
