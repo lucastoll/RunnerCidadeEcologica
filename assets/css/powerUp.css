@@ -40,15 +40,21 @@
     margin-bottom: 50px;
 }
 
-.powerUp--carroEletrico{
-    background-image: url(../img/powerUp/carroEletrico.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;}
-
 .powerUp--carroEletrico::after{
     content: 'carroEletrico';
     position: absolute;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+}
+
+.powerUp--carroEletrico div{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.powerUp--carroEletrico div img{
+    width: 100%;
+    height: 100%;
 }
 
 .powerUp--caminhada{

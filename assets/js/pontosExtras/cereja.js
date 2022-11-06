@@ -1,6 +1,8 @@
+import { jogoEmExecucao } from "../comecarJogo.js";
 import { ponto, setPonto } from "../pontuacao.js";
 import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
-import { arrayPontosExtras, cerejaPontoExtra } from "./colisorPontosExtras.js"
+import { arrayPontosExtras } from "./colisorPontosExtras.js"
+import { randomNumPontosExtras } from "./randomizerPontosExtras.js";
 let scoreCereja = document.querySelector(".scoreCereja");
 let scoreCereja2x = document.querySelector(".scoreCereja2x");
 
@@ -26,4 +28,42 @@ function cereja(){
     })
 }
 
-export { cereja }
+const spriteCereja00 = document.querySelector(".pontosExtras--cereja00");
+const spriteCereja01 = document.querySelector(".pontosExtras--cereja01");
+const spriteCereja02 = document.querySelector(".pontosExtras--cereja02");
+const spriteCereja03 = document.querySelector(".pontosExtras--cereja03");
+const spriteCereja04 = document.querySelector(".pontosExtras--cereja04");
+
+let contadorSpriteCereja = 0;
+
+const loopSpritesCereja = setInterval(() => {
+    if(jogoEmExecucao && randomNumPontosExtras == 2){
+       if(contadorSpriteCereja == 0){
+        spriteCereja03.style.display = "none"
+        spriteCereja00.style.display = "block";
+        contadorSpriteCereja++;
+       }
+       else if(contadorSpriteCereja == 1){
+        spriteCereja00.style.display = "none"
+        spriteCereja01.style.display = "block";
+        contadorSpriteCereja++;
+       }
+       else if(contadorSpriteCereja == 2){
+        spriteCereja01.style.display = "none"
+        spriteCereja02.style.display = "block";
+        contadorSpriteCereja++;
+       }
+       else if(contadorSpriteCereja == 3){
+        spriteCereja02.style.display = "none"
+        spriteCereja03.style.display = "block";
+        contadorSpriteCereja++;
+       }
+       else if(contadorSpriteCereja == 4){
+        spriteCereja03.style.display = "none"
+        spriteCereja04.style.display = "block";
+        contadorSpriteCereja = 0
+       }   
+    }
+}, 200); 
+
+export { cereja, loopSpritesCereja }

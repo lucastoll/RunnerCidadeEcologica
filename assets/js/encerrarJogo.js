@@ -11,6 +11,7 @@ import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./p
 import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
+import { loopSpritesCereja } from "./pontosExtras/cereja.js";
 
 export function encerrarJogo(){
     if(jogoEmExecucao){
@@ -67,6 +68,8 @@ function limpaIntervalos(){
     clearTimeout(timeoutRecursivoRandomizerObstaculos);
     clearTimeout(timeoutRecursivoRandomizerPowerups);
     clearTimeout(timeoutRecursivoRandomizerPontosExtras);
+    //cereja animacao
+    clearInterval(loopSpritesCereja);
     //colisores
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);

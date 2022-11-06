@@ -12,8 +12,8 @@ import { playerTemCarroEletrico } from "../powerUps/carroEletrico.js";
 /* Define a colisão e condição de parada */
 
 const estrelaPontoExtra = document.querySelector(".pontosExtras--estrela");
-const sustentabilidadePontoExtra = document.querySelector(".pontosExtras--sustentabilidade");
-const cerejaPontoExtra = document.querySelector(".pontosExtras--cereja");
+const sustentabilidadePontoExtra = document.querySelector(".sustentabilidade");
+const cerejaPontoExtra = document.querySelector(".cereja");
 
 let arrayPontosExtras = [estrelaPontoExtra, sustentabilidadePontoExtra, cerejaPontoExtra];
 let posicaoEstrela, posicaoSustentabilidade, posicaoCereja;

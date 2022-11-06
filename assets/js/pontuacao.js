@@ -2,7 +2,7 @@ import { playerTemPowerUp } from "./powerUps/animacaoPowerup.js";
 
 const pontuacao = document.querySelector('.pontuacao');
 let ponto=0, pontoTimerObstaculo=0;
-let timerObstaculos = 2000;
+let timerObstaculos = 3000;
 
 function Marcaponto(){
     if(playerTemPowerUp == true){
@@ -11,7 +11,7 @@ function Marcaponto(){
     }
     else{
         if(timerObstaculos > 1500){
-            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 2010);
+            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 3010);
         }
         pontoTimerObstaculo++;
         ponto++;
