@@ -12,22 +12,43 @@ body{
 	overflow: hidden;
     background: url(../img/cidadePoluidaBackground.jpg);
     background-size: 220% 100%;
-	background-position-y: 10px;
 	animation: backgroundCarro 1000s infinite;
 	z-index: -2;
 /* 	background-position-y: -60px !important;
 	background-repeat: repeat-x !important; */
 }
 
+.areaJogoCicloviaBackground{
+	display: none;
+    width: 100%;
+    height: 505px;
+	position: absolute;
+	overflow: hidden;
+    background: url(../img/cicloviaBackground.png) !important;  
+    background-size: 220% 100% !important; 
+	z-index: -2;
+	background-repeat: repeat-x;
+	background-position: 20px 0;
+	animation: backgroundCarro 1000s infinite;
+}
+
 @media screen and (min-width: 1024px) {
 	.areajogo1{
 		background-size: 150% 100%;
+	}
+
+	.areaJogoCicloviaBackground{
+		background-size: 150% 100% !important;
 	}
 }
 
 @media screen and (min-width: 1440px) {
 	.areajogo1{
 		background-size: 100% 100%;
+	}
+
+	.areajogo1{
+		background-size: 100% 100% !important;
 	}
 }
 

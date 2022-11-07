@@ -40,14 +40,16 @@ function bicicleta(){
 function addEstilosBicicleta(){
     powerUpBicicleta.style.animation = "none";
     powerUpBicicleta.style.right = "-10%";
-    areaJogo.style.background = "#51BFFE";
+    areaJogo.style.background = "none";
+    document.querySelector(".areaJogoCicloviaBackground").style.display = "block";
     document.querySelector("body").style.background = "#009A17";
 }
 
 function removeEstilosBicicleta(){
     setPlayerTemPowerUp(false);
     playerTemBicicleta = false;
-    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
+    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)"
+    document.querySelector(".areaJogoCicloviaBackground").style.display = "none";
     document.querySelector("body").style.background = "#A1AAAA";
 }
 

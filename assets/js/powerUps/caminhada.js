@@ -40,13 +40,15 @@ function caminhada(){
 function addEstilosCaminhada(){
     powerUpCaminhada.style.animation = "none";
     powerUpCaminhada.style.right = "-10%";
-    areaJogo.style.background = "#51BFFE";
+    areaJogo.style.background = "url(./assets/img/cicloviaBackground.png)";
+    areaJogo.classList.add("areaJogoCiclovia");
     document.querySelector("body").style.background = "#009A17";
 }
 
 function removeEstilosCaminhada(){
     setPlayerTemPowerUp(false);
     playerTemCaminhada = false;
+    areaJogo.classList.remove("areaJogoCiclovia");
     areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
 }
