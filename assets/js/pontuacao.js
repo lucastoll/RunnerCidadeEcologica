@@ -11,7 +11,7 @@ function Marcaponto(){
     }
     else{
         if(timerObstaculos > 1500){
-            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 4010);
+            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 3010);
         }
         pontoTimerObstaculo++;
         ponto++;

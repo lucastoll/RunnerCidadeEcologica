@@ -9,31 +9,31 @@ import { playerTemCaminhada } from "../powerUps/caminhada.js";
 
 let randomNumObstaculo = 0, i;
 let timeoutRecursivoRandomizerObstaculos;
+//[sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho];
 
 function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
-        if(playerTemCaminhada){
-            randomNumObstaculo = 0;
+        if(playerTemCaminhada || playerTemBicicleta){
+            randomNumObstaculo = getRandomInt(6, 9);
+            randomNumObstaculo = 8;
         }
         else{
             randomNumObstaculo = getRandomInt(0, 6);
-            randomNumObstaculo = 5;
-            console.log(randomNumObstaculo)
-            //randomNumObstaculo == 0;
         }
+        console.log(randomNumObstaculo)
         for(i=0; i<arrayObstaculos.length; i++){
             arrayObstaculos[i].style = "none";
         }
         /* DELAY PARA O CSS ENTENDER QUE A ANIMAÇÃO MUDOU */
 
-        if(playerTemCaminhada){
+        if(playerTemCaminhada || playerTemBicicleta){
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(4500) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(3000) / 1000}s`;
             }, 10);
         }
         else if(playerTemCarroEletrico){
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(5000) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(3500) / 1000}s`;
             }, 10);
         }
         else{
@@ -43,10 +43,10 @@ function randomizerObstaculos(){
         }
         
         if(playerTemBicicleta){
-            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 3000);
+            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 4500);
         }
         else if(playerTemCarroEletrico){
-            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 2500);
+            timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, 5000);
         }
         else{
             timeoutRecursivoRandomizerObstaculos = setTimeout(randomizerObstaculos, timerObstaculos);

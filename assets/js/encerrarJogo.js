@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCarroEletrico, loopSpritesCereja } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPassarinho } from "./comecarJogo.js";
 import { ponto } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -70,9 +70,11 @@ function limpaIntervalos(){
     //cereja animacao
     clearInterval(loopSpritesCereja);
     //power up carro eletrico animação;
-    clearInterval(loopSpritesCarroEletrico);
+    clearInterval(loopSpritesPowerupCarroEletrico);
     //sprite pomba
     clearInterval(loopSpritesPomba);
+    //sprite passarinho
+    clearInterval(loopSpritesPassarinho);
     //colisores
     clearInterval(intervaloChecarColisaoObstaculo);
     clearInterval(intervaloChecarColisaoPowerup);

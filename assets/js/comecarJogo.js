@@ -14,7 +14,7 @@ import { posicaoPlayerLeft, setPosicaoPlayerLeft } from "./player/movimentacao.j
 import { arrayPontosExtras, colisorPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { getRandomInt } from "./auxiliares/getRandomInt.js";
 import { randomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
-import { spritesPomba } from "./obstaculos/spritesObstaculos.js";
+import { spritesPassarinho, spritesPomba } from "./obstaculos/spritesObstaculos.js";
 import { spritesCereja } from "./pontosExtras/cereja.js";
 
 
@@ -26,7 +26,7 @@ const areaJogo = document.querySelector(".areajogo1");
 
 var jogoEmExecucao = false;
 let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao
-let loopSpritesPomba, loopSpritesCarroEletrico, loopSpritesCereja;
+let loopSpritesPomba, loopSpritesPowerupCarroEletrico, loopSpritesCereja, loopSpritesPassarinho;
 
 /* Ações botão do menu e botão de restart */
 
@@ -80,7 +80,8 @@ function comecarJogo(){
   setTimeout(randomizerPontosExtras, 1);
 
   loopSpritesPomba = setInterval(spritesPomba, 200);
-  loopSpritesCarroEletrico = setInterval(spritesPowerUpCarroEletrico, 200);
+  loopSpritesPassarinho = setInterval(spritesPassarinho, 200);
+  loopSpritesPowerupCarroEletrico = setInterval(spritesPowerUpCarroEletrico, 200);
   loopSpritesCereja = setInterval(spritesCereja, 200);
 }
 
@@ -105,5 +106,5 @@ function removeEstilosPowerup(){
   }
 }
 
-export {loopSpritesCereja, loopSpritesCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
+export {loopSpritesPassarinho, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
 
