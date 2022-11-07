@@ -28,12 +28,12 @@ function randomizerObstaculos(){
 
         if(playerTemCaminhada){
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(3500) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(4500) / 1000}s`;
             }, 10);
         }
         else if(playerTemCarroEletrico){
             setTimeout(() => {
-                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(4000) / 1000}s`;
+                arrayObstaculos[randomNumObstaculo].style.animation = `carroparado linear 1 ${(5000) / 1000}s`;
             }, 10);
         }
         else{
