@@ -19,7 +19,10 @@ import { spritesCereja } from "./pontosExtras/cereja.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
-const buttonMenuInicial = document.querySelector(".buttonMenu");
+const buttonMenuInicialComecarJogo = document.querySelector(".buttonMenu");
+const buttonMenuInicialTutorial = document.querySelector(".popUpTutorialButton");
+
+const popUpTutorial = document.querySelector(".containerPopUpTutorial");
 
 const menu = document.querySelector(".menu");
 const areaJogo = document.querySelector(".areajogo1");
@@ -28,13 +31,20 @@ var jogoEmExecucao = false;
 let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao
 let loopSpritesPomba, loopSpritesPowerupCarroEletrico, loopSpritesCereja, loopSpritesPassarinho;
 
-/* Ações botão do menu e botão de restart */
+//Mostrar PopUpTutorial
+buttonMenuInicialComecarJogo.addEventListener("click", () => {
+  popUpTutorial.style.display = "flex";
+})
 
-//Sumir o menu inicial e aparecer a tela de jogo
-buttonMenuInicial.addEventListener("click", () => { //Botao do menu inicial
+buttonMenuInicialTutorial.addEventListener("click", () => { //Botao do menu inicial
   menu.style.display = "none"; 
   areaJogo.style.display = "block";
+  popUpTutorial.style.display = "none";
 })
+
+
+
+
 //Comecar o jogo no onClick do botão do menu e do botão de restart
 buttonComecarJogo.forEach((button) => {
   button.addEventListener('click', comecarJogo)

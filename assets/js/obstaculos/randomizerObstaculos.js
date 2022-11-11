@@ -15,7 +15,7 @@ function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
         if(playerTemCaminhada || playerTemBicicleta){
             randomNumObstaculo = getRandomInt(6, 9);
-            randomNumObstaculo = 8;
+            //randomNumObstaculo = 8;
         }
         else{
             randomNumObstaculo = getRandomInt(0, 6);
