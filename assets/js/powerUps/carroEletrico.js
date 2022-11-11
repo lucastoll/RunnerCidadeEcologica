@@ -19,19 +19,11 @@ function carroEletrico(){
     timeoutAnimacaoPowerUpCarroEletrico = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
+
     timeoutFimPowerUpCarroEletrico = setTimeout(() => {
         player.style = "";
         removeEstilosCarroEletrico();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
-        if(window.innerWidth < 1024){
-            areaJogo.style.backgroundSize = "220% 100%"
-          }
-          else if(window.innerWidth >= 1440){
-            areaJogo.style.backgroundSize = "100% 100%"
-          }
-          else if(window.innerWidth >= 1024){
-            areaJogo.style.backgroundSize = "150% 100%"
-          }
         limpaSprites();
     }, 23000);
 }
@@ -39,15 +31,15 @@ function carroEletrico(){
 function addEstilosCarroEletrico(){
     powerUpCarroEletrico.style.animation = "none";
     powerUpCarroEletrico.style.right = "-10%";
-    areaJogo.style.background = "#005CC1";
     document.querySelector("body").style.background = "#A1AAAA";
+    areaJogo.classList.add("areaJogoCidadeLimpa");
 }
 
 function removeEstilosCarroEletrico(){
     setPlayerTemPowerUp(false);
     playerTemCarroEletrico = false;
-    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
+    areaJogo.classList.remove("areaJogoCidadeLimpa");
 }
 
 const spriteCarroEletrico00 = document.querySelector(".powerUp--carroEletrico00");

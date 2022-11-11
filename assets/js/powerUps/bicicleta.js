@@ -19,19 +19,11 @@ function bicicleta(){
     timeoutAnimacaoPowerUpBicicleta = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
+    
     timeoutFimPowerUpBicicleta = setTimeout(() => {
         player.style = "";
         removeEstilosBicicleta();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
-        if(window.innerWidth < 1024){
-            areaJogo.style.backgroundSize = "220% 100%"
-          }
-          else if(window.innerWidth >= 1440){
-            areaJogo.style.backgroundSize = "100% 100%"
-          }
-          else if(window.innerWidth >= 1024){
-            areaJogo.style.backgroundSize = "150% 100%"
-          }
         limpaSprites();
     }, 23000);
 }
@@ -40,8 +32,7 @@ function bicicleta(){
 function addEstilosBicicleta(){
     powerUpBicicleta.style.animation = "none";
     powerUpBicicleta.style.right = "-10%";
-    areaJogo.style.background = "url(./assets/img/cicloviaBackground.png)";
-    player.classList.add("bicicletaMargin");
+    player.classList.add("cicloviaMargin");
     areaJogo.classList.add("areaJogoCiclovia");
     document.querySelector("body").style.background = "#009A17";
 }
@@ -49,9 +40,8 @@ function addEstilosBicicleta(){
 function removeEstilosBicicleta(){
     setPlayerTemPowerUp(false);
     playerTemBicicleta = false;
-    player.classList.remove("bicicletaMargin");
+    player.classList.remove("cicloviaMargin");
     areaJogo.classList.remove("areaJogoCiclovia");
-    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
 }
 

@@ -19,19 +19,11 @@ function caminhada(){
     timeoutAnimacaoPowerUpCaminhada = setTimeout(() => {
         animacaoPowerUp();
     }, 20000);
+
     timeoutFimPowerUpCaminhada = setTimeout(() => {
         player.style = "";
         removeEstilosCaminhada();
         setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
-        if(window.innerWidth < 1024){
-            areaJogo.style.backgroundSize = "220% 100%"
-          }
-          else if(window.innerWidth >= 1440){
-            areaJogo.style.backgroundSize = "100% 100%"
-          }
-          else if(window.innerWidth >= 1024){
-            areaJogo.style.backgroundSize = "150% 100%"
-          }
         limpaSprites();
     }, 23000);
 }
@@ -40,7 +32,7 @@ function caminhada(){
 function addEstilosCaminhada(){
     powerUpCaminhada.style.animation = "none";
     powerUpCaminhada.style.right = "-10%";
-    areaJogo.style.background = "url(./assets/img/cicloviaBackground.png)";
+    player.classList.add("cicloviaMargin");
     areaJogo.classList.add("areaJogoCiclovia");
     document.querySelector("body").style.background = "#009A17";
 }
@@ -48,8 +40,8 @@ function addEstilosCaminhada(){
 function removeEstilosCaminhada(){
     setPlayerTemPowerUp(false);
     playerTemCaminhada = false;
+    player.classList.remove("cicloviaMargin");
     areaJogo.classList.remove("areaJogoCiclovia");
-    areaJogo.style.background = "url(./assets/img/cidadePoluidaBackground.jpg)";
     document.querySelector("body").style.background = "#A1AAAA";
 }
 

@@ -32,6 +32,7 @@ export function encerrarJogo(){
         player.classList.remove("pula");
     
         let backgroundPosition = window.getComputedStyle(areaJogo).backgroundPosition;
+        console.log(backgroundPosition);
         
         areaJogo.style.animation = "none";
         areaJogo.style.backgroundPosition = backgroundPosition;

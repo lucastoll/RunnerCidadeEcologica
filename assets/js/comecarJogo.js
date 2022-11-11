@@ -66,7 +66,7 @@ function comecarJogo(){
     arrayPontosExtras[i].style.right = `-20%`;
   }
 
-  areaJogo.style.animation = "backgroundCarro 1000s infinite";
+  areaJogo.style.animation = "backgroundCarro 500s infinite, backgroundCarro 500s infinite";
   popUp.style.display = "none";
   player.classList.remove("pula");
   player.style = "";
@@ -104,16 +104,6 @@ function removeEstilosPowerup(){
   removeEstilosCarroEletrico();
   removeEstilosOnibus();
   removeEstilosCaminhada();
-
-  if(window.innerWidth < 1024){
-    areaJogo.style.backgroundSize = "220% 100%"
-  }
-  else if(window.innerWidth >= 1440){
-    areaJogo.style.backgroundSize = "100% 100%"
-  }
-  else if(window.innerWidth >= 1024){
-    areaJogo.style.backgroundSize = "150% 100%"
-  }
 }
 
 export {loopSpritesPassarinho, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};

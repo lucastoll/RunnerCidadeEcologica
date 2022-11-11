@@ -83,7 +83,7 @@
     align-items: center;
     background: #0076F7;
     border-radius: 16px;
-    color: #FFE578;
+    color: white;
     font-family: 'Press Start 2P', cursive;
     border: 5px solid black;
 	padding: 40px 20px;
@@ -196,6 +196,6 @@
 
 .popUpCreditos a{
 	text-decoration: underline;
-	color: #FFE578;
+	color: white;
 }
 

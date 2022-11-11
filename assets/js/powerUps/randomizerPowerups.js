@@ -7,9 +7,10 @@ let randomNumPowerup = 0, i;
 let timeoutRecursivoRandomizerPowerups;
 
 function randomizerPowerups(){
+    //[powerUpBicicleta, powerUpOnibus, powerUpCarroEletrico, powerUpCaminhada];
     if(jogoEmExecucao && playerTemPowerUp == false){
         randomNumPowerup = getRandomInt(0, 4);
-        //randomNumPowerup = 0;
+        randomNumPowerup = 1;
         for(i=0; i<arrayPowerups.length; i++){
             arrayPowerups[i].style.animation = "none";
         }

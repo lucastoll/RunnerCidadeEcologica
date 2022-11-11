@@ -4,11 +4,14 @@
     background-size: 100% 100%;
     background-position: left bottom;
 	position: absolute;
-	bottom: 0px;
+	bottom: 8px;
 	width: 50px;
 	height: 50px;
 	left: 40px;
-	/*animation: pula linear infinite 1s;*/
+}
+
+.cicloviaMargin{
+	bottom: 3px;
 }
 
 .sprite{
@@ -41,10 +44,6 @@
 	height: 70px;
 }
 
-.bicicletaMargin{
-	margin-bottom: 5px;
-}
-
 .carroEletrico{
     background: white;
 }
@@ -59,7 +58,7 @@
 
 @keyframes pula {
 	0%{
-		bottom: 0px;
+		bottom: 8px;
 	}
 
 	45%{
@@ -72,7 +71,7 @@
 		bottom: 100px;
 	}
 	100%{
-		bottom: 0px;
+		bottom: 8px;
 	}
 }
 
