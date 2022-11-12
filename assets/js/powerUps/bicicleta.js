@@ -9,10 +9,12 @@ const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
 let playerTemBicicleta;
 let timeoutAnimacaoPowerUpBicicleta;
 let timeoutFimPowerUpBicicleta;
+let vezesQueOPlayerPegouBicicleta = 0;
 
 function bicicleta(){
     limpaSprites();
     playerTemBicicleta = true;
+    vezesQueOPlayerPegouBicicleta++
 
     animacaoPowerUp("entradaPowerUp");
     addEstilosBicicleta();
@@ -46,4 +48,4 @@ function removeEstilosBicicleta(){
 }
 
 
-export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta, removeEstilosBicicleta }
+export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta, removeEstilosBicicleta, vezesQueOPlayerPegouBicicleta }

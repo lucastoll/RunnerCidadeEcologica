@@ -9,10 +9,12 @@ const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
 let playerTemCarroEletrico = false;
 let timeoutAnimacaoPowerUpCarroEletrico;
 let timeoutFimPowerUpCarroEletrico;
+let vezesQueOPlayerPegouCarroEletrico = 0;
 
 function carroEletrico(){
     limpaSprites();
     playerTemCarroEletrico = true;
+    vezesQueOPlayerPegouCarroEletrico++;
     
     animacaoPowerUp("entradaPowerUp");
     addEstilosCarroEletrico();
@@ -98,4 +100,4 @@ function spritesPowerUpCarroEletrico(){
  }
 }
 
-export { spritesPowerUpCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico }
+export { spritesPowerUpCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico, vezesQueOPlayerPegouCarroEletrico }

@@ -16,7 +16,12 @@ function Marcaponto(){
         pontoTimerObstaculo++;
         ponto++;
     }
-    pontuacao.innerHTML=`Score: ${ponto}`;
+    if(playerTemPowerUp){
+        pontuacao.innerHTML=`<span class="pontuacao2x">2x</span>Score: ${ponto}`;
+    }
+    else{
+        pontuacao.innerHTML=`Score: ${ponto}`;
+    }
 }
 
 function ResetaPontos(){

@@ -6,6 +6,9 @@ import { setPosicaoPlayerLeft } from "../player/movimentacao.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;
+let powerUpTimeBar = document.querySelector(".pontuacaoTimeBar");
+
+let contador = 1;
 
 function animacaoPowerUp(statusPowerUp){
     clearTimeout(timeoutRecursivoRandomizerObstaculos);
@@ -15,9 +18,18 @@ function animacaoPowerUp(statusPowerUp){
     animacaoPisca();
     if(statusPowerUp == "entradaPowerUp"){
         animacaoNuvemPoluidaParaNuvemLimpa();
+        powerUpTimeBar.style.display = "block";
+        for(let i=21; i >= 0; i--){
+            setTimeout(() => {
+                powerUpTimeBar.style.width = `${(i / 21) * 100}%`;
+            }, (contador++) * 1000)
+        }
     }
     else{
         animacaoNuvemLimpaParaNuvemPoluida();
+        setTimeout(() => {
+            powerUpTimeBar.style.display = "none";
+        }, 3000)
     }
 
     //Após o fim da animação pisca...

@@ -9,10 +9,12 @@ const powerUpOnibus = document.querySelector(".powerUp--onibus");
 let playerTemOnibus = false;
 let timeoutAnimacaoPowerUpOnibus;
 let timeoutFimPowerUpOnibus;
+let vezesQueOPlayerPegouOnibus = 0;
 
 function onibus(){
     limpaSprites();
     playerTemOnibus = true;
+    vezesQueOPlayerPegouOnibus++;
     
     animacaoPowerUp("entradaPowerUp");
     addEstilosOnibus();
@@ -43,4 +45,4 @@ function removeEstilosOnibus(){
     areaJogo.classList.remove("areaJogoCidadeLimpa");
 }
 
-export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus }
+export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus, vezesQueOPlayerPegouOnibus }

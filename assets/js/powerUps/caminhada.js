@@ -9,10 +9,12 @@ const powerUpCaminhada = document.querySelector(".powerUp--caminhada");
 let playerTemCaminhada;
 let timeoutAnimacaoPowerUpCaminhada;
 let timeoutFimPowerUpCaminhada;
+let vezesQueOPlayerPegouCaminhada = 0;
 
 function caminhada(){
     limpaSprites();
     playerTemCaminhada = true;
+    vezesQueOPlayerPegouCaminhada++;
 
     animacaoPowerUp("entradaPowerUp");
     addEstilosCaminhada();
@@ -46,4 +48,4 @@ function removeEstilosCaminhada(){
 }
 
 
-export { caminhada, playerTemCaminhada, timeoutFimPowerUpCaminhada, timeoutAnimacaoPowerUpCaminhada, removeEstilosCaminhada }
+export { caminhada, playerTemCaminhada, timeoutFimPowerUpCaminhada, timeoutAnimacaoPowerUpCaminhada, removeEstilosCaminhada, vezesQueOPlayerPegouCaminhada }

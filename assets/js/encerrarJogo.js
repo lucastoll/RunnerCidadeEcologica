@@ -32,15 +32,16 @@ export function encerrarJogo(){
         player.classList.remove("pula");
     
         let backgroundPosition = window.getComputedStyle(areaJogo).backgroundPosition;
-        console.log(backgroundPosition);
-        
+
         areaJogo.style.animation = "none";
         areaJogo.style.backgroundPosition = backgroundPosition;
     
         player.style.bottom = `${posicaoPlayerBottom}px`;
+
         popUp.style.display = "flex";
         botaoMostrarPopUpFeedback.style.display = "block";
         document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
+        mensagemPosGameOver();
     
         setJogoEmExecucao(false);
         limpaIntervalos();
