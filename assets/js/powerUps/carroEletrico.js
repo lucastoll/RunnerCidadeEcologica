@@ -4,17 +4,20 @@ import { areaJogo, jogoEmExecucao } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups, randomNumPowerup } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
+import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
+
 
 const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
 let playerTemCarroEletrico = false;
 let timeoutAnimacaoPowerUpCarroEletrico;
 let timeoutFimPowerUpCarroEletrico;
-let vezesQueOPlayerPegouCarroEletrico = 0;
 
 function carroEletrico(){
     limpaSprites();
     playerTemCarroEletrico = true;
-    vezesQueOPlayerPegouCarroEletrico++;
+    setQuantidadePowerUp(quantidadePowerUp + 1);
+    setPenultimoPowerUpString(ultimoPowerUpString);
+    setUltimoPowerUpString("o carro elétrico");
     
     animacaoPowerUp("entradaPowerUp");
     addEstilosCarroEletrico();
@@ -100,4 +103,4 @@ function spritesPowerUpCarroEletrico(){
  }
 }
 
-export { spritesPowerUpCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico, vezesQueOPlayerPegouCarroEletrico }
+export { spritesPowerUpCarroEletrico, carroEletrico, playerTemCarroEletrico, timeoutFimPowerUpCarroEletrico, timeoutAnimacaoPowerUpCarroEletrico, removeEstilosCarroEletrico }

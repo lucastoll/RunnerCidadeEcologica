@@ -11,6 +11,8 @@ import { timeoutAnimacaoPowerUpCaminhada, timeoutFimPowerUpCaminhada } from "./p
 import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/colisorPontosExtras.js";
 import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
+import { mensagemPosGameOver } from "./mensagemPosGameOver.js";
+
 
 export function encerrarJogo(){
     if(jogoEmExecucao){
@@ -85,8 +87,9 @@ function limpaIntervalos(){
     clearInterval(intervaloPontuacao);
 }
 
-  document.addEventListener("visibilitychange", () => {
+// Encerrar jogo caso o player troque de aba / aplicativo dentro do computador.
+document.addEventListener("visibilitychange", () => {
     if(document.visibilityState === "hidden" && jogoEmExecucao == true) {
         encerrarJogo();
     } 
-  });
+});

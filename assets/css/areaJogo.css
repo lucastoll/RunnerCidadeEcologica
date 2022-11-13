@@ -2,8 +2,8 @@ body{
 	position: relative;
 	background: #A1AAAA;
 	display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 100vh;
 }
 
@@ -11,7 +11,7 @@ body{
 .areajogo1{
 	display: none;
     width: 100%;
-	height: 100vh !important;;
+	height: 60vh !important;;
 	position: relative;
 	overflow: hidden;
     background: url(../img/chãoCidadeSuja.png), url(../img/cidadePoluidaBackground.jpg);

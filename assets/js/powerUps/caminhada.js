@@ -4,17 +4,19 @@ import { areaJogo } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
+import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
 
 const powerUpCaminhada = document.querySelector(".powerUp--caminhada");
 let playerTemCaminhada;
 let timeoutAnimacaoPowerUpCaminhada;
 let timeoutFimPowerUpCaminhada;
-let vezesQueOPlayerPegouCaminhada = 0;
 
 function caminhada(){
     limpaSprites();
     playerTemCaminhada = true;
-    vezesQueOPlayerPegouCaminhada++;
+    setQuantidadePowerUp(quantidadePowerUp + 1);
+    setPenultimoPowerUpString(ultimoPowerUpString);
+    setUltimoPowerUpString("a caminhada");
 
     animacaoPowerUp("entradaPowerUp");
     addEstilosCaminhada();
@@ -48,4 +50,4 @@ function removeEstilosCaminhada(){
 }
 
 
-export { caminhada, playerTemCaminhada, timeoutFimPowerUpCaminhada, timeoutAnimacaoPowerUpCaminhada, removeEstilosCaminhada, vezesQueOPlayerPegouCaminhada }
+export { caminhada, playerTemCaminhada, timeoutFimPowerUpCaminhada, timeoutAnimacaoPowerUpCaminhada, removeEstilosCaminhada }

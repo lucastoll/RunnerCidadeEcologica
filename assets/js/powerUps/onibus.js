@@ -4,17 +4,20 @@ import { areaJogo } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
+import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
+
 
 const powerUpOnibus = document.querySelector(".powerUp--onibus");
 let playerTemOnibus = false;
 let timeoutAnimacaoPowerUpOnibus;
 let timeoutFimPowerUpOnibus;
-let vezesQueOPlayerPegouOnibus = 0;
 
 function onibus(){
     limpaSprites();
     playerTemOnibus = true;
-    vezesQueOPlayerPegouOnibus++;
+    setQuantidadePowerUp(quantidadePowerUp + 1);
+    setPenultimoPowerUpString(ultimoPowerUpString);
+    setUltimoPowerUpString("o ônibus");
     
     animacaoPowerUp("entradaPowerUp");
     addEstilosOnibus();
@@ -45,4 +48,4 @@ function removeEstilosOnibus(){
     areaJogo.classList.remove("areaJogoCidadeLimpa");
 }
 
-export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus, vezesQueOPlayerPegouOnibus }
+export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus }

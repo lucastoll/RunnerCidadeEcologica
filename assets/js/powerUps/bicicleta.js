@@ -4,17 +4,19 @@ import { areaJogo } from "../comecarJogo.js";
 import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
+import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
 
 const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
 let playerTemBicicleta;
 let timeoutAnimacaoPowerUpBicicleta;
 let timeoutFimPowerUpBicicleta;
-let vezesQueOPlayerPegouBicicleta = 0;
 
 function bicicleta(){
     limpaSprites();
     playerTemBicicleta = true;
-    vezesQueOPlayerPegouBicicleta++
+    setQuantidadePowerUp(quantidadePowerUp + 1);
+    setPenultimoPowerUpString(ultimoPowerUpString);
+    setUltimoPowerUpString("a bicicleta");
 
     animacaoPowerUp("entradaPowerUp");
     addEstilosBicicleta();
@@ -29,7 +31,6 @@ function bicicleta(){
         limpaSprites();
     }, 23000);
 }
-
 
 function addEstilosBicicleta(){
     powerUpBicicleta.style.animation = "none";
@@ -48,4 +49,4 @@ function removeEstilosBicicleta(){
 }
 
 
-export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta, removeEstilosBicicleta, vezesQueOPlayerPegouBicicleta }
+export { bicicleta, playerTemBicicleta, timeoutFimPowerUpBicicleta, timeoutAnimacaoPowerUpBicicleta, removeEstilosBicicleta }
