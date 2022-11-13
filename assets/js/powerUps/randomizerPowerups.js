@@ -10,6 +10,7 @@ function randomizerPowerups(){
     //[powerUpBicicleta, powerUpOnibus, powerUpCarroEletrico, powerUpCaminhada];
     if(jogoEmExecucao && playerTemPowerUp == false){
         randomNumPowerup = getRandomInt(0, 4);
+        randomNumPowerup = 2;
         for(i=0; i<arrayPowerups.length; i++){
             arrayPowerups[i].style.animation = "none";
         }

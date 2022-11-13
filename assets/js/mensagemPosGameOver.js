@@ -1,8 +1,12 @@
-let quantidadePowerUp = 0, ultimoPowerUpString = "", penultimoPowerUpString = "";
+let quantidadePowerUp = 0, ultimoPowerUpString = "a", penultimoPowerUpString = "b";
 let MensagemPosGameOver = document.querySelector(".popUpMensagemPosGameOver");
 
 function mensagemPosGameOver(){
     let Mensagem;
+
+    if(ultimoPowerUpString == penultimoPowerUpString){
+        quantidadePowerUp = 1;
+    }
 
     if(quantidadePowerUp == 0){
         Mensagem = "Você pode melhorar, procure trocar para um meio de transporte " +
@@ -34,10 +38,3 @@ function setPenultimoPowerUpString(value){
 
 export { mensagemPosGameOver, setQuantidadePowerUp, quantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString, setPenultimoPowerUpString }
 
-
-/* Bom trabalho, utilizando ao utilizar ------------ você conseguiu se locomover pela cidade 
-sem causar danos ao meio ambiente e conseguiu uma boa pontuação
-
-Excelente!!, ao utilizar meios de transporte como o ------------- e o ----------------
-você se moveu pela cidade ecologica sem contribuir com a poluição e assim conseguiu uma ótima pontuação 
-*/

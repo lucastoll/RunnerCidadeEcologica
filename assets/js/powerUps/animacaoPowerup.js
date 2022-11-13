@@ -3,10 +3,12 @@ import { animacaoNuvemLimpaParaNuvemPoluida, animacaoNuvemPoluidaParaNuvemLimpa 
 import { player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos  } from "../obstaculos/colisorObstaculos.js";
 import { randomizerObstaculos, timeoutRecursivoRandomizerObstaculos } from "../obstaculos/randomizerObstaculos.js";
 import { setPosicaoPlayerLeft } from "../player/movimentacao.js";
+import { ponto, pontuacao } from "../pontuacao.js";
 
 let animacaoPowerupRodando = false;
 let playerTemPowerUp = false;
 let powerUpTimeBar = document.querySelector(".pontuacaoTimeBar");
+let arrayTimeoutsBarraDeTempoPowerUp = [];
 
 let contador = 1;
 
@@ -17,17 +19,24 @@ function animacaoPowerUp(statusPowerUp){
     travaAnimacoes();
     animacaoPisca();
     if(statusPowerUp == "entradaPowerUp"){
+        pontuacao.innerHTML=`<span class="pontuacao2x">2x</span>Score: ${ponto}`;
         animacaoNuvemPoluidaParaNuvemLimpa();
         powerUpTimeBar.style.display = "block";
+        powerUpTimeBar.style.width = "100%";
+        contador = 1;
         for(let i=21; i >= 0; i--){
-            setTimeout(() => {
-                powerUpTimeBar.style.width = `${(i / 21) * 100}%`;
-            }, (contador++) * 1000)
+            arrayTimeoutsBarraDeTempoPowerUp.push(
+                setTimeout(() => {
+                    powerUpTimeBar.style.width = `${(i / 21) * 100}%`;
+                }, (contador++) * 1000)
+            )
         }
     }
     else{
+        console.log("ronaldo")
         animacaoNuvemLimpaParaNuvemPoluida();
         setTimeout(() => {
+            pontuacao.innerHTML=`Score: ${ponto}`;
             powerUpTimeBar.style.display = "none";
         }, 3000)
     }
@@ -68,4 +77,4 @@ function animacaoPisca(){
     player.style.animation = `pisca 3s linear 1`;
 }
 
-export { animacaoPowerUp, animacaoPowerupRodando, playerTemPowerUp, setPlayerTemPowerUp, animacaoPisca, travaAnimacoes }
+export { animacaoPowerUp, animacaoPowerupRodando, playerTemPowerUp, setPlayerTemPowerUp, animacaoPisca, travaAnimacoes, powerUpTimeBar, arrayTimeoutsBarraDeTempoPowerUp}

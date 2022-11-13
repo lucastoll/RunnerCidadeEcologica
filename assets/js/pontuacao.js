@@ -37,4 +37,4 @@ function setPonto(value){
     ponto = value;
 }
 
-export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto, setPonto};
+export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto, setPonto, pontuacao};

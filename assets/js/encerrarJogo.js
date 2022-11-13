@@ -12,6 +12,7 @@ import { arrayPontosExtras, arrayPosicoesPontosExtras } from "./pontosExtras/col
 import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
 import { mensagemPosGameOver } from "./mensagemPosGameOver.js";
+import { arrayTimeoutsBarraDeTempoPowerUp, powerUpTimeBar } from "./powerUps/animacaoPowerup.js";
 
 
 export function encerrarJogo(){
@@ -29,6 +30,10 @@ export function encerrarJogo(){
             arrayPontosExtras[i].style.animation = "none";
             arrayPontosExtras[i].style.left = `${arrayPosicoesPontosExtras[i]}px`;
         }
+
+        for(let i=0; i<arrayTimeoutsBarraDeTempoPowerUp.length; i++) {
+            clearTimeout(arrayTimeoutsBarraDeTempoPowerUp[i]);
+          }
     
         player.style.animation = "none";
         player.classList.remove("pula");
@@ -42,7 +47,8 @@ export function encerrarJogo(){
 
         popUp.style.display = "flex";
         botaoMostrarPopUpFeedback.style.display = "block";
-        document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`
+        document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`;
+        powerUpTimeBar.style.display = "none";
         mensagemPosGameOver();
     
         setJogoEmExecucao(false);
