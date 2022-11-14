@@ -120,7 +120,6 @@ function pular(SomaBotton, limiteQueda, menosBottom){
 
 
 function moveEsquerda(){
-    console.log("esquerda");
     posicaoPlayerLeft = Number(window.getComputedStyle(player).left.replace("px", ""));
     comprimentoPlayer = Number(window.getComputedStyle(player).width.replace("px", ""));    
 
@@ -133,7 +132,6 @@ function moveEsquerda(){
 }
 
 function moveDireita(){
-    console.log("direita    ");
     posicaoPlayerLeft = Number(window.getComputedStyle(player).left.replace("px", ""));
     comprimentoPlayer = Number(window.getComputedStyle(player).width.replace("px", ""));
 

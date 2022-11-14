@@ -74,7 +74,7 @@ function comecarJogo(){
   popUp.style.display = "none";
   document.querySelector(".buttonPopUp").disabled = true;
   // Coloca animação na area de jogo
-  areaJogo.style.animation = "backgroundCarro 500s infinite, backgroundCarro 500s infinite";
+  areaJogo.style.animation = "backgroundCarro 500s infinite linear, backgroundCarro 500s infinite linear";
   // Reseta pontuação
   ResetaPontos();
   resetPowerUpMessage();

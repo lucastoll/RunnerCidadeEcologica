@@ -13,7 +13,7 @@ let timeoutRecursivoRandomizerObstaculos;
 
 
 function randomizerObstaculos(){
-    if(jogoEmExecucao && animacaoPowerupRodando == false){
+    if(jogoEmExecucao && animacaoPowerupRodando == false && false == true){
         if(playerTemCaminhada || playerTemBicicleta){
             randomNumObstaculo = getRandomInt(6, 10);
             randomNumObstaculo = 9;

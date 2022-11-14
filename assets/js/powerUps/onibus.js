@@ -5,6 +5,8 @@ import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
 import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
+import { arrayMusicas } from "../musica.js";
+import { setBottom, setBottomMarginVeiculo } from "../player/movimentacao.js";
 
 
 const powerUpOnibus = document.querySelector(".powerUp--onibus");
@@ -39,6 +41,12 @@ function addEstilosOnibus(){
     powerUpOnibus.style.right = "-10%";
     player.classList.add("onibus");
     areaJogo.classList.add("areaJogoCidadeLimpa");
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[2].play();
+    setBottom(8);
+    setBottomMarginVeiculo(8);
 }
 
 function removeEstilosOnibus(){
@@ -46,6 +54,12 @@ function removeEstilosOnibus(){
     playerTemOnibus = false;
     player.classList.remove("onibus");
     areaJogo.classList.remove("areaJogoCidadeLimpa");
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[0].play();
+    setBottom(8);
+    setBottomMarginVeiculo(8);
 }
 
 export { onibus, playerTemOnibus, timeoutAnimacaoPowerUpOnibus, timeoutFimPowerUpOnibus, removeEstilosOnibus }

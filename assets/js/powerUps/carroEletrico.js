@@ -5,6 +5,8 @@ import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups, randomNumPowerup } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
 import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
+import { arrayMusicas } from "../musica.js";
+import { setBottom, setBottomMarginVeiculo } from "../player/movimentacao.js";
 
 
 const powerUpCarroEletrico = document.querySelector(".powerUp--carroEletrico");
@@ -18,6 +20,10 @@ function carroEletrico(){
     setQuantidadePowerUp(quantidadePowerUp + 1);
     setPenultimoPowerUpString(ultimoPowerUpString);
     setUltimoPowerUpString("o carro elétrico");
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[1].play();
     
     animacaoPowerUp("entradaPowerUp");
     addEstilosCarroEletrico();
@@ -38,13 +44,21 @@ function addEstilosCarroEletrico(){
     powerUpCarroEletrico.style.right = "-10%";
     document.querySelector("body").style.background = "#A1AAAA";
     areaJogo.classList.add("areaJogoCidadeLimpa");
+    setBottom(8);
+    setBottomMarginVeiculo(8);
 }
 
 function removeEstilosCarroEletrico(){
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[0].play();
     setPlayerTemPowerUp(false);
     playerTemCarroEletrico = false;
     document.querySelector("body").style.background = "#A1AAAA";
     areaJogo.classList.remove("areaJogoCidadeLimpa");
+    setBottom(8);
+    setBottomMarginVeiculo(8);
 }
 
 const spriteCarroEletrico00 = document.querySelector(".powerUp--carroEletrico00");

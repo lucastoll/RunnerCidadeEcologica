@@ -34,6 +34,11 @@ function colisorPowerup(){
     playerEstaColidindoCarroEletrico = (posicaoPowerUpCarroEletrico < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCarroEletrico > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
     playerEstaColidindoCaminhada = (posicaoPowerUpCaminhada  < (posicaoPlayerLeft + comprimentoPlayer) && posicaoPowerUpCaminhada > (posicaoPlayerLeft - 50) && posicaoPlayer > 25 && posicaoPlayer < 100);
 
+
+    if(playerEstaColidindoBicicleta || playerEstaColidindoCaminhada || playerEstaColidindoCarroEletrico || playerEstaColidindoOnibus){
+      document.querySelector(".efeitoSonoroPowerUp").play();
+    }
+
     if(playerEstaColidindoBicicleta){
       bicicleta();
     }

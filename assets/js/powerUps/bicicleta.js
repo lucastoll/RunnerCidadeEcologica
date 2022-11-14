@@ -6,6 +6,7 @@ import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
 import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
 import { setBottom, setBottomMarginVeiculo } from "../player/movimentacao.js";
+import { arrayMusicas } from "../musica.js";
 
 const powerUpBicicleta = document.querySelector(".powerUp--bicicleta");
 let playerTemBicicleta;
@@ -39,6 +40,10 @@ function addEstilosBicicleta(){
     player.classList.add("cicloviaMargin");
     setBottom(3);
     setBottomMarginVeiculo(3);
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[3].play();
     areaJogo.classList.add("areaJogoCiclovia");
     document.querySelector("body").style.background = "#009A17";
 }
@@ -46,6 +51,10 @@ function addEstilosBicicleta(){
 function removeEstilosBicicleta(){
     setPlayerTemPowerUp(false);
     playerTemBicicleta = false;
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[0].play();
     setBottom(8);
     setBottomMarginVeiculo(8);
     player.classList.remove("cicloviaMargin");

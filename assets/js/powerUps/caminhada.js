@@ -6,6 +6,7 @@ import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
 import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
 import { setBottom, setBottomMarginVeiculo } from "../player/movimentacao.js";
+import { arrayMusicas } from "../musica.js";
 
 const powerUpCaminhada = document.querySelector(".powerUp--caminhada");
 let playerTemCaminhada;
@@ -39,6 +40,10 @@ function addEstilosCaminhada(){
     powerUpCaminhada.style.right = "-10%";
     player.classList.add("cicloviaMargin");
     areaJogo.classList.add("areaJogoCiclovia");
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[4].play();
     setBottom(3);
     setBottomMarginVeiculo(3);
     document.querySelector("body").style.background = "#009A17";
@@ -47,6 +52,10 @@ function addEstilosCaminhada(){
 function removeEstilosCaminhada(){
     setPlayerTemPowerUp(false);
     playerTemCaminhada = false;
+    for(let i = 0; i < arrayMusicas.length; i++){
+        arrayMusicas[i].pause();
+    }
+    arrayMusicas[0].play();
     setBottom(8);
     setBottomMarginVeiculo(8);
     player.classList.remove("cicloviaMargin");

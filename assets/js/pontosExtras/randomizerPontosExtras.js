@@ -6,7 +6,7 @@ let randomNumPontosExtras = 0, i;
 let timeoutRecursivoRandomizerPontosExtras;
 
 function randomizerPontosExtras(){
-    if(jogoEmExecucao && false == true){
+    if(jogoEmExecucao){
         randomNumPontosExtras = getRandomInt(0, 3);
         for(i=0; i < arrayPontosExtras.length; i++){
             arrayPontosExtras[i].style.animation = "none";
