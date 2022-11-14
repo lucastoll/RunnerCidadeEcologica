@@ -36,5 +36,11 @@ function setPenultimoPowerUpString(value){
     penultimoPowerUpString = value;
 }
 
-export { mensagemPosGameOver, setQuantidadePowerUp, quantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString, setPenultimoPowerUpString }
+function resetPowerUpMessage(){
+    quantidadePowerUp = 0
+    ultimoPowerUpString = "a"
+    penultimoPowerUpString = "b"
+}
+
+export { mensagemPosGameOver, setQuantidadePowerUp, quantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString, setPenultimoPowerUpString, resetPowerUpMessage }
 

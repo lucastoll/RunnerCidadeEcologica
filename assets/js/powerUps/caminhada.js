@@ -5,6 +5,7 @@ import { animacaoPowerUp, setPlayerTemPowerUp } from "./animacaoPowerup.js";
 import { randomizerPowerups } from "./randomizerPowerups.js";
 import { limpaSprites } from "../player/sprites.js";
 import { quantidadePowerUp, setPenultimoPowerUpString, setQuantidadePowerUp, setUltimoPowerUpString, ultimoPowerUpString } from "../mensagemPosGameOver.js";
+import { setBottom, setBottomMarginVeiculo } from "../player/movimentacao.js";
 
 const powerUpCaminhada = document.querySelector(".powerUp--caminhada");
 let playerTemCaminhada;

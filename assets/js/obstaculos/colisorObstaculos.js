@@ -37,7 +37,7 @@ function colisorObstaculos(){
       playerEstaColidindo = 
       (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer) 
       && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
-      && posicaoPlayerBottom > 60);
+      && posicaoPlayerBottom < 70);
     }
     else{
       playerEstaColidindo = 

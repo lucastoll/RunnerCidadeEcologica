@@ -14,6 +14,7 @@ import { arrayPontosExtras, colisorPontosExtras } from "./pontosExtras/colisorPo
 import { randomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js";
 import { spritesPassarinho, spritesPomba } from "./obstaculos/spritesObstaculos.js";
 import { spritesCereja } from "./pontosExtras/cereja.js";
+import { resetPowerUpMessage } from "./mensagemPosGameOver.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -76,6 +77,7 @@ function comecarJogo(){
   areaJogo.style.animation = "backgroundCarro 500s infinite, backgroundCarro 500s infinite";
   // Reseta pontuação
   ResetaPontos();
+  resetPowerUpMessage();
 
   // Começa os intervalos de checagem de colisão;
   intervaloChecarColisaoObstaculo = setInterval(colisorObstaculos, 10);
@@ -103,6 +105,8 @@ function removeEstilosPowerup(){
   removeEstilosOnibus();
   removeEstilosCaminhada();
 }
+
+
 
 export {loopSpritesPassarinho, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
 
