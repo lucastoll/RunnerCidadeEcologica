@@ -3,6 +3,7 @@ import { comprimentoPlayer, posicaoPlayerLeft } from "../player/movimentacao.js"
 import { playerTemOnibus } from "../powerUps/onibus.js";
 import { randomNumObstaculo } from "./randomizerObstaculos.js";
 
+//urbano
 const player = document.querySelector(".player");
 const sacoDeLixo = document.querySelector(".sacoDeLixo01");
 const sacoDeLixo2 = document.querySelector(".sacoDeLixo02");
@@ -14,6 +15,7 @@ const rato = document.querySelector(".rato");
 const pedra = document.querySelector(".pedra01");
 const pedra2 = document.querySelector(".pedra02");
 const passarinho = document.querySelector(".passarinho");
+const banco = document.querySelector('.banco');
 
 
 
@@ -22,7 +24,7 @@ const popUp = document.querySelector(".containerPopUpRestart");
 /* Define a colisão e condição de parada */
 let posicaoPlayerBottom, arrayPosicoesObstaculos;
 
-const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho];
+const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho, banco];
 
 let playerEstaColidindo
 

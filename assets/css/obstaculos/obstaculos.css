@@ -1,9 +1,16 @@
-.sacoDeLixo01, .sacoDeLixo02, .cone, .hidrante, .rato, .pomba, .pedra01, .pedra02, .passarinho{
+.sacoDeLixo01, .sacoDeLixo02, .cone, .hidrante, .rato, .pomba, .pedra01, .pedra02, .passarinho, .banco{
 	position: absolute;
 	bottom: 8px;
 	width: 50px;
 	height: 50px;
 	right: -50%;
+}
+
+.banco{
+	background: url(../../img/obstaculos/Banco00.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	bottom: 0;
 }
 
 .pomba, .passarinho{

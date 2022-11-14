@@ -9,16 +9,18 @@ import { playerTemCaminhada } from "../powerUps/caminhada.js";
 
 let randomNumObstaculo = 0, i;
 let timeoutRecursivoRandomizerObstaculos;
-//[sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho];
+//const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho, banco];
+
 
 function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
         if(playerTemCaminhada || playerTemBicicleta){
-            randomNumObstaculo = getRandomInt(6, 9);
-            randomNumObstaculo = 8;
+            randomNumObstaculo = getRandomInt(6, 10);
+            randomNumObstaculo = 9;
         }
         else{
             randomNumObstaculo = getRandomInt(0, 6);
+            randomNumObstaculo = 2;
         }
         console.log(randomNumObstaculo)
         for(i=0; i<arrayObstaculos.length; i++){

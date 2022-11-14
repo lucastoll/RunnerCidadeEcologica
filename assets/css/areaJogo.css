@@ -23,9 +23,11 @@ body{
 	z-index: -2;
 }
 
-
-
-
+@media screen and (min-width: 1919px) and (min-height: 1023px) {
+	.areajogo1{
+		margin-bottom: 55px;
+	}
+}
 
 .areaJogoCidadeLimpa{
 	width: 100%;
@@ -53,14 +55,6 @@ body{
 	animation: backgroundCarro 500s infinite linear; 
 	z-index: -2;
 }
-
-@media screen and (min-width: 1024px) {
-
-}
-
-@media screen and (min-width: 1440px) {
-
-} 
 
 @keyframes backgroundCarro {
 	0%{
