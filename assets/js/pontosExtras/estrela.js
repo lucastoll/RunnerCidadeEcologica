@@ -1,6 +1,6 @@
 import { ponto, setPonto } from "../pontuacao.js";
 import { playerTemPowerUp } from "../powerUps/animacaoPowerup.js";
-import { arrayPontosExtras, estrelaPontoExtra } from "./colisorPontosExtras.js";
+import { arrayPontosExtras } from "./colisorPontosExtras.js";
 let scoreEstrela = document.querySelector(".scoreEstrela");
 let scoreEstrela2x = document.querySelector(".scoreEstrela2x");
 

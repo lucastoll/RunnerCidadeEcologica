@@ -18,6 +18,8 @@ import { arrayTimeoutsBarraDeTempoPowerUp, powerUpTimeBar } from "./powerUps/ani
 export function encerrarJogo(){
     if(jogoEmExecucao){
         setJogoEmExecucao(false);
+        limpaIntervalos();
+        // Trava objetos
         for(let i = 0; i < arrayObstaculos.length; i++) {
             arrayObstaculos[i].style.animation = "none";
             arrayObstaculos[i].style.left = `${arrayPosicoesObstaculos[i]}px`;
@@ -30,29 +32,21 @@ export function encerrarJogo(){
             arrayPontosExtras[i].style.animation = "none";
             arrayPontosExtras[i].style.left = `${arrayPosicoesPontosExtras[i]}px`;
         }
-
         for(let i=0; i<arrayTimeoutsBarraDeTempoPowerUp.length; i++) {
             clearTimeout(arrayTimeoutsBarraDeTempoPowerUp[i]);
           }
-    
         player.style.animation = "none";
         player.classList.remove("pula");
-    
+        player.style.bottom = `${posicaoPlayerBottom}px`;
         let backgroundPosition = window.getComputedStyle(areaJogo).backgroundPosition;
-
         areaJogo.style.animation = "none";
         areaJogo.style.backgroundPosition = backgroundPosition;
-    
-        player.style.bottom = `${posicaoPlayerBottom}px`;
-
+        // PopUp
         popUp.style.display = "flex";
         botaoMostrarPopUpFeedback.style.display = "block";
         document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`;
         powerUpTimeBar.style.display = "none";
-        mensagemPosGameOver();
-    
-        setJogoEmExecucao(false);
-        limpaIntervalos();
+        mensagemPosGameOver();    
     
         setTimeout(() => {
             document.querySelector(".buttonPopUp").disabled = false;

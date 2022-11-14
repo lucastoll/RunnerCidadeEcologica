@@ -38,12 +38,16 @@ function addEstilosCaminhada(){
     powerUpCaminhada.style.right = "-10%";
     player.classList.add("cicloviaMargin");
     areaJogo.classList.add("areaJogoCiclovia");
+    setBottom(3);
+    setBottomMarginVeiculo(3);
     document.querySelector("body").style.background = "#009A17";
 }
 
 function removeEstilosCaminhada(){
     setPlayerTemPowerUp(false);
     playerTemCaminhada = false;
+    setBottom(8);
+    setBottomMarginVeiculo(8);
     player.classList.remove("cicloviaMargin");
     areaJogo.classList.remove("areaJogoCiclovia");
     document.querySelector("body").style.background = "#A1AAAA";
