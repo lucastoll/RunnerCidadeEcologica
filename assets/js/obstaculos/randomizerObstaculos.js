@@ -20,7 +20,6 @@ function randomizerObstaculos(){
     if(jogoEmExecucao && animacaoPowerupRodando == false){
         if(!playerTemPowerUp){
             randomNumObstaculo = getRandomInt(0, 6);
-            randomNumObstaculo = 5
         }
         else if(playerTemCarroEletrico || playerTemOnibus){
             randomNumObstaculo = getRandomInt(4, 8);

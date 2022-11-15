@@ -15,6 +15,7 @@ import { randomizerPontosExtras } from "./pontosExtras/randomizerPontosExtras.js
 import { spritesPassarinho, spritesPomba } from "./obstaculos/spritesObstaculos.js";
 import { spritesCereja } from "./pontosExtras/cereja.js";
 import { resetPowerUpMessage } from "./mensagemPosGameOver.js";
+import { getRandomInt } from "./auxiliares/getRandomInt.js";
 
 
 const buttonComecarJogo = document.querySelectorAll(".buttonStart");
@@ -85,9 +86,9 @@ function comecarJogo(){
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
   // Comeca os intervalos de randomizer
-  setTimeout(randomizerPowerups, 10);
+  setTimeout(randomizerPowerups, getRandomInt(6000, 16000));
   setTimeout(randomizerObstaculos, 2000);
-  setTimeout(randomizerPontosExtras, 1);
+  setTimeout(randomizerPontosExtras, getRandomInt(3000, 20000));
   // Comeca os intervalos de sprites
   loopSpritesPomba = setInterval(spritesPomba, 200);
   loopSpritesPassarinho = setInterval(spritesPassarinho, 200);

@@ -10,8 +10,9 @@ function Marcaponto(){
         pontoTimerObstaculo = pontoTimerObstaculo + 2;
     }
     else{
+        console.log(timerObstaculos, pontoTimerObstaculo);
         if(timerObstaculos > 1500){
-            timerObstaculos = Math.floor(-5 * pontoTimerObstaculo + 3010);
+            timerObstaculos = Math.floor(-7 * pontoTimerObstaculo + 3010);
         }
         pontoTimerObstaculo++;
         ponto++;
@@ -26,6 +27,7 @@ function Marcaponto(){
 
 function ResetaPontos(){
     ponto=0;
+    pontoTimerObstaculo=0;
     pontuacao.innerHTML=`Score: ${ponto}`;
 }
 
@@ -36,5 +38,6 @@ function setTimerObstaculos(value){
 function setPonto(value){
     ponto = value;
 }
+
 
 export {Marcaponto, ResetaPontos, timerObstaculos, setTimerObstaculos, ponto, setPonto, pontuacao};

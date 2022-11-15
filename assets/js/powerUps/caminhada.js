@@ -29,7 +29,7 @@ function caminhada(){
     timeoutFimPowerUpCaminhada = setTimeout(() => {
         player.style = "";
         removeEstilosCaminhada();
-        setTimeout(randomizerPowerups, getRandomInt(20000, 35000));
+        setTimeout(randomizerPowerups, getRandomInt(10000, 20000));
         limpaSprites();
     }, 23000);
 }

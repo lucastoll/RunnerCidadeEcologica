@@ -15,8 +15,7 @@ function randomizerPontosExtras(){
             arrayPontosExtras[randomNumPontosExtras].style.animation = `animaPontosExtras linear 1 3.5s`;
         }, 10)
     
-        //timeoutRecursivoRandomizerPontosExtras = setTimeout(randomizerPontosExtras, getRandomInt(3600, 30000));
-        timeoutRecursivoRandomizerPontosExtras = setTimeout(randomizerPontosExtras, 3600);
+        timeoutRecursivoRandomizerPontosExtras = setTimeout(randomizerPontosExtras, getRandomInt(3600, 20000));
     }
 }
 

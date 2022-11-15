@@ -1,6 +1,6 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
 import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPassarinho } from "./comecarJogo.js";
-import { ponto } from "./pontuacao.js";
+import { ponto, setPonto, setTimerObstaculos } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
 import { arrayPowerups, arrayPosicaoPowerups } from "./powerUps/colisorPowerups.js";
@@ -20,6 +20,7 @@ export function encerrarJogo(){
     if(jogoEmExecucao){
         setJogoEmExecucao(false);
         limpaIntervalos();
+        setTimerObstaculos(3000);
         // Trava objetos
         for(let i = 0; i < arrayObstaculos.length; i++) {
             arrayObstaculos[i].style.animation = "none";
@@ -49,10 +50,11 @@ export function encerrarJogo(){
         powerUpTimeBar.style.display = "none";
         mensagemPosGameOver();    
         //musica
+        document.querySelector(".audioGameOver").play();
         for(let i = 0; i < arrayMusicas.length; i++){
             arrayMusicas[i].pause();
+            arrayMusicas[i].currentTime = 0;
         }
-    
         setTimeout(() => {
             document.querySelector(".buttonPopUp").disabled = false;
         }, 2001)
