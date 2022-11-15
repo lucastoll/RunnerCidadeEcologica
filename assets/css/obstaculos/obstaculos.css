@@ -1,9 +1,17 @@
-.sacoDeLixo01, .sacoDeLixo02, .cone, .hidrante, .rato, .pomba, .pedra01, .pedra02, .passarinho, .banco{
+.sacoDeLixo01, .sacoDeLixo02, .cone, .hidrante, .rato, .pomba, .pedra01, .pedra02, .passarinho, .banco, .tronco, .placaSubwaySurfers{
 	position: absolute;
 	bottom: 8px;
 	width: 50px;
 	height: 50px;
 	right: -50%;
+}
+
+.placaSubwaySurfers{
+	background: blue;
+}
+
+.tronco{
+	background: brown;
 }
 
 .banco{
@@ -21,11 +29,15 @@
 	bottom: 10px;
 	position: absolute;
 	transform: scale(1.5);
-	
 }
 
-/*Animação do primeiro obstaculo*/
-@keyframes carroparado {
+.cone img{
+	bottom: 10px;
+	position: absolute;
+	transform: scale(1.3);
+}
+
+@keyframes animacaoObstaculo {
 	0%{
 		right: -10%;
 	}
@@ -33,7 +45,7 @@
 		right: 100%;
 	}
 	100%{
-		right: 100%;
+		right: 110%;
 	}
 }
 

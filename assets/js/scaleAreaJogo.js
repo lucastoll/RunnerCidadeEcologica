@@ -1,7 +1,9 @@
 const areaJogo = document.querySelector(".areajogo1");
 
+let scale;
+
 window.addEventListener('DOMContentLoaded', () => {
-    let scale = Math.min(
+    scale = Math.min(
         window.innerWidth / 1024,
         window.innerHeight / 500
     )
@@ -10,5 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('resize', () => {
+    scale = Math.min(
+        window.innerWidth / 1024,
+        window.innerHeight / 500
+    )
+
     areaJogo.style.transform = `scale(${scale})`
 })

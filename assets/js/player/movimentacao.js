@@ -65,13 +65,10 @@ function setBottom(value){
 function pulo(contadorParam){
     contador = 0;
 
-
     if(contadorParam > 5){
-        console.log("Pulao");
         pular(12, 110, 5);
     }
     else if(contadorParam <= 5){
-        console.log("pulinho");
         pular(11, 85, 4);
     }
 }

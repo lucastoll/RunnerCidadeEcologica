@@ -11,11 +11,13 @@ const hidrante = document.querySelector(".hidrante");
 const cone = document.querySelector(".cone");
 const pomba = document.querySelector(".pomba");
 const rato = document.querySelector(".rato");
+const placaSubwaySurfers = document.querySelector(".placaSubwaySurfers");
 //ciclovia
 const pedra = document.querySelector(".pedra01");
 const pedra2 = document.querySelector(".pedra02");
 const passarinho = document.querySelector(".passarinho");
 const banco = document.querySelector('.banco');
+const tronco = document.querySelector(".tronco");
 
 
 
@@ -24,7 +26,11 @@ const popUp = document.querySelector(".containerPopUpRestart");
 /* Define a colisão e condição de parada */
 let posicaoPlayerBottom, arrayPosicoesObstaculos;
 
-const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, hidrante, cone, rato, pomba, pedra, pedra2, passarinho, banco];
+/* sacoDeLixo até cone - cidade suja - 0 a 5 */
+/* hidrante até passarinho - cidade limpa - 4 a 7 */
+/* passarinho até tronco - ciclovia - 7 a 11 */
+
+const arrayObstaculos = [sacoDeLixo, sacoDeLixo2, pomba, rato, hidrante, cone, placaSubwaySurfers, passarinho, pedra, pedra2, banco, tronco];
 
 let playerEstaColidindo
 
@@ -35,11 +41,18 @@ function colisorObstaculos(){
     }
     posicaoPlayerBottom = window.getComputedStyle(player).bottom.replace("px", "");
 
-    if(randomNumObstaculo == 5 || randomNumObstaculo == 8){ // Obstaculos aereos
+    if(randomNumObstaculo == 2 || randomNumObstaculo == 7){ // Obstaculos aereos
       playerEstaColidindo = 
       (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer) 
       && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
       && posicaoPlayerBottom < 70);
+    }
+    else if(randomNumObstaculo == 3 || randomNumObstaculo == 4 || randomNumObstaculo == 5){
+      playerEstaColidindo = 
+      (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer - 10) 
+      && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
+      && posicaoPlayerBottom < 40);
+      console.log("random num obstaculo: " + randomNumObstaculo + "  bottom: " + posicaoPlayerBottom)
     }
     else{
       playerEstaColidindo = 
@@ -47,6 +60,7 @@ function colisorObstaculos(){
       && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
       && posicaoPlayerBottom < 50);
     }
+
 
     //&& posicaoObstaculoUm > 0
 

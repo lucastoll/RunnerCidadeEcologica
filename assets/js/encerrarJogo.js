@@ -13,6 +13,7 @@ import { timeoutRecursivoRandomizerPontosExtras } from "./pontosExtras/randomize
 import { botaoMostrarPopUpFeedback } from "./formulario/formulario.js";
 import { mensagemPosGameOver } from "./mensagemPosGameOver.js";
 import { arrayTimeoutsBarraDeTempoPowerUp, powerUpTimeBar } from "./powerUps/animacaoPowerup.js";
+import { arrayMusicas } from "./musica.js";
 
 
 export function encerrarJogo(){
@@ -47,6 +48,10 @@ export function encerrarJogo(){
         document.querySelector(".popUpScorePlaceholder").innerHTML = `Score: ${ponto}`;
         powerUpTimeBar.style.display = "none";
         mensagemPosGameOver();    
+        //musica
+        for(let i = 0; i < arrayMusicas.length; i++){
+            arrayMusicas[i].pause();
+        }
     
         setTimeout(() => {
             document.querySelector(".buttonPopUp").disabled = false;

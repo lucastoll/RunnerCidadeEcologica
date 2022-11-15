@@ -23,7 +23,7 @@
 }
 
 .menu__items{
-	width: 400px;
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -31,6 +31,12 @@
 	margin-top: 32px;
 	margin-right: 32px;
 	gap: 32px;
+}
+
+@media screen and (min-height: 700px) {
+	.menu__items{
+		width: 400px;
+	}
 }
 
 .menu__items img{

@@ -33,7 +33,6 @@ function animacaoPowerUp(statusPowerUp){
         }
     }
     else{
-        console.log("ronaldo")
         animacaoNuvemLimpaParaNuvemPoluida();
         setTimeout(() => {
             pontuacao.innerHTML=`Score: ${ponto}`;
@@ -73,7 +72,6 @@ function animacaoPisca(){
     for(var i=0; i<arrayObstaculos.length; i++){
         arrayObstaculos[i].style.animation = "pisca 3s linear 1";
     }
-    console.log(player.style.animation)
     player.style.animation = `pisca 3s linear 1`;
 }
 

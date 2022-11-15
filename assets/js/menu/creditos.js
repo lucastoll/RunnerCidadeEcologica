@@ -5,7 +5,6 @@ document.querySelector(".buttonCreditos").addEventListener("click", () => {
 })
 
 containerPopUp.addEventListener('click', (e) => {
-    console.log(e.target.id)
     if(e.target.id != 'popUpCreditosLink'){
         containerPopUp.style.display = "none";
     }
