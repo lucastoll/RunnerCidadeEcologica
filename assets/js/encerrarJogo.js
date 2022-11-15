@@ -1,5 +1,5 @@
 import { popUp, player, posicaoPlayerBottom, arrayObstaculos, arrayPosicoesObstaculos } from "./obstaculos/colisorObstaculos.js";
-import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPassarinho } from "./comecarJogo.js";
+import { setJogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloPontuacao, areaJogo, jogoEmExecucao, intervaloChecarColisaoPontosExtras, loopSpritesPomba, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPassarinho, timeoutInicialObstaculos, timeoutInicialPontosExtras, timeoutInicialPowerUp } from "./comecarJogo.js";
 import { ponto, setPonto, setTimerObstaculos } from "./pontuacao.js";
 import { timeoutAnimacaoPowerUpBicicleta, timeoutFimPowerUpBicicleta } from "./powerUps/bicicleta.js";
 import { timeoutAnimacaoPowerUpCarroEletrico, timeoutFimPowerUpCarroEletrico } from "./powerUps/carroEletrico.js";
@@ -62,6 +62,10 @@ export function encerrarJogo(){
 }
 
 function limpaIntervalos(){
+    //timeoutsIniciais
+    clearTimeout(timeoutInicialObstaculos);
+    clearTimeout(timeoutInicialPontosExtras);
+    clearTimeout(timeoutInicialPowerUp);
     //bicicleta
     clearTimeout(timeoutAnimacaoPowerUpBicicleta);
     clearTimeout(timeoutFimPowerUpBicicleta);

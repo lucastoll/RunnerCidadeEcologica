@@ -31,6 +31,8 @@ var jogoEmExecucao = false;
 let intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao
 let loopSpritesPomba, loopSpritesPowerupCarroEletrico, loopSpritesCereja, loopSpritesPassarinho;
 
+let timeoutInicialPowerUp, timeoutInicialObstaculos, timeoutInicialPontosExtras; 
+
 //Mostrar PopUpTutorial
 buttonMenuInicialComecarJogo.addEventListener("click", () => {
   popUpTutorial.style.display = "flex";
@@ -86,9 +88,9 @@ function comecarJogo(){
   intervaloChecarColisaoPowerup = setInterval(colisorPowerup, 10)
   intervaloPontuacao = setInterval(Marcaponto, 2000);
   // Comeca os intervalos de randomizer
-  setTimeout(randomizerPowerups, getRandomInt(6000, 16000));
-  setTimeout(randomizerObstaculos, 2000);
-  setTimeout(randomizerPontosExtras, getRandomInt(3000, 20000));
+  timeoutInicialPowerUp = setTimeout(randomizerPowerups, getRandomInt(6000, 16000));
+  timeoutInicialObstaculos = setTimeout(randomizerObstaculos, 2000);
+  timeoutInicialPontosExtras = setTimeout(randomizerPontosExtras, getRandomInt(3000, 20000));
   // Comeca os intervalos de sprites
   loopSpritesPomba = setInterval(spritesPomba, 200);
   loopSpritesPassarinho = setInterval(spritesPassarinho, 200);
@@ -109,5 +111,5 @@ function removeEstilosPowerup(){
 
 
 
-export {loopSpritesPassarinho, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
+export {timeoutInicialObstaculos, timeoutInicialPowerUp, timeoutInicialPontosExtras, loopSpritesPassarinho, loopSpritesCereja, loopSpritesPowerupCarroEletrico, loopSpritesPomba, setJogoEmExecucao, jogoEmExecucao, intervaloChecarColisaoObstaculo, intervaloChecarColisaoPowerup, intervaloChecarColisaoPontosExtras, intervaloPontuacao, areaJogo};
 
