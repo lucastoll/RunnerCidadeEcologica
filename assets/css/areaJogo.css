@@ -15,7 +15,7 @@ body{
 	height: 500px;
 	position: relative;
 	overflow: hidden;
-    background: url(../img/chãoCidadeSuja.png), url(../img/CidadeFinalSuja.png);
+    background: url(../img/chãoCidadeSuja.png), url(../img/CidadeSuja.png);
 	background-position: left bottom, center center;
 	background-repeat: repeat-x, repeat-x;
     background-size: 2800px 200px, 200% 100% !important;
@@ -25,7 +25,7 @@ body{
 
 @media screen and (min-width: 1819px) and (min-height: 923px) {
 	.areajogo1{
-		margin-bottom: 45px;
+		margin-bottom: 35px;
 	}
 }
 
