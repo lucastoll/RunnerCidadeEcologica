@@ -7,11 +7,17 @@
 }
 
 .placaSubwaySurfers{
-	background: blue;
+	background: url(../../img/obstaculos/PlacaSubwaySurfers00.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 35px;
 }
 
 .tronco{
-	background: brown;
+	background: url(../../img/obstaculos/Tronco00.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 20px;
 }
 
 .banco{

@@ -53,6 +53,18 @@ function colisorObstaculos(){
       && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
       && posicaoPlayerBottom < 40);
     }
+    else if(randomNumObstaculo == 6){
+      playerEstaColidindo = 
+      (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer - 10) 
+      && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
+      && posicaoPlayerBottom < 35);
+    }
+    else if(randomNumObstaculo == 11){
+      playerEstaColidindo = 
+      (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer - 10) 
+      && arrayObstaculos[randomNumObstaculo].offsetLeft > (posicaoPlayerLeft - 50) 
+      && posicaoPlayerBottom < 20);
+    }
     else{
       playerEstaColidindo = 
       (arrayObstaculos[randomNumObstaculo].offsetLeft < (posicaoPlayerLeft + comprimentoPlayer) 

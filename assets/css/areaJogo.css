@@ -15,17 +15,17 @@ body{
 	height: 500px;
 	position: relative;
 	overflow: hidden;
-    background: url(../img/chãoCidadeSuja.png), url(../img/cidadePoluidaBackground.jpg);
+    background: url(../img/chãoCidadeSuja.png), url(../img/CidadeFinalSuja.png);
 	background-position: left bottom, center center;
 	background-repeat: repeat-x, repeat-x;
-    background-size: 2800px 200px, 100% 100% !important;
+    background-size: 2800px 200px, 200% 100% !important;
 	animation: backgroundCarro 500s infinite linear, backgroundCarro 500s infinite linear; 
 	z-index: -2;
 }
 
 @media screen and (min-width: 1819px) and (min-height: 923px) {
 	.areajogo1{
-		margin-bottom: 55px;
+		margin-bottom: 45px;
 	}
 }
 
@@ -34,10 +34,10 @@ body{
     height: 500px;
 	position: relative;
 	overflow: hidden;
-	background: url(../img/chãoCidadeLimpa.png);
-	background-position: left bottom;
-	background-repeat: repeat-x;
-    background-size: 2800px 200px;
+	background: url(../img/chãoCidadeLimpa.png), url(../img/CidadeLimpa.png);
+	background-position: left bottom, center center;
+	background-repeat: repeat-x, repeat-x;
+    background-size: 2800px 200px, 200% 100%;
 	animation: backgroundCarro 500s infinite linear; 
 	z-index: -2;
 }

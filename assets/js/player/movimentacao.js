@@ -128,12 +128,16 @@ function moveEsquerda(){
      }
 }
 
+const areajogo1 = document.querySelector(".areajogo1");
+let areaJogoComprimento;
+
 function moveDireita(){
     posicaoPlayerLeft = Number(window.getComputedStyle(player).left.replace("px", ""));
     comprimentoPlayer = Number(window.getComputedStyle(player).width.replace("px", ""));
+    areaJogoComprimento = Number(window.getComputedStyle(areajogo1).width.replace("px", ""));
 
     if(jogoEmExecucao == true && animacaoPowerupRodando == false) {
-        if(posicaoPlayerLeft + comprimentoPlayer < window.innerWidth){
+        if(posicaoPlayerLeft + comprimentoPlayer < areaJogoComprimento){
             posicaoPlayerLeft = posicaoPlayerLeft + 3;
         }
         player.style.left = `${posicaoPlayerLeft}px`;
